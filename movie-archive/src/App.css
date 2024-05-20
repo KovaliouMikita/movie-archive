@@ -1,0 +1,80 @@
+.App {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.SideBar {
+  background-color: #f2ebf9;
+  width: 280px;
+  height: 2644px;
+  position: fixed;
+  top: 40px;
+  padding: 24px;
+  gap: 80px;
+  opacity: 1;
+}
+.MainSection {
+  position: fixed;
+  background-color: #eaebed;
+  width: 980px;
+  height: 2660px;
+  top: 40px;
+  left: 370px;
+  gap: 40px;
+  opacity: 1;
+}
+.Header {
+  width: 980px;
+  height: 48px;
+  font-weight: bold;
+  font-size: 32px;
+  gap: 0px;
+  justify-content: space-between;
+  opacity: 1;
+  margin: 10px;
+}
+button.Button {
+  font-size: 22px;
+  font: Inter;
+  width: 232px;
+  height: 42px px;
+  text-align: start;
+  background-color: #f2ebf9;
+  padding: 10px;
+  gap: 10px;
+  border-radius: 8px;
+  border-style: none;
+}
+button.Button:hover {
+  background-color: #bd93f7;
+}
+button.Button.active {
+  background-color: #e5d5fa;
+  color: #9854f6;
+  width: 232 px;
+  height: 42px px;
+}
+
+.DropdownMenu {
+  display: flex;
+  justify-content: space-between;
+  font-size: 22px;
+  width: 980px;
+  height: 72px;
+  gap: 8px;
+}
+.CardSection {
+  background: blue;
+  display: grid;
+  grid-template-columns: 482px 482px;
+  width: 980px;
+  height: auto;
+  gap: 8px;
+}
+.MovieCard {
+  background: beige;
+  gap: 16px;
+  height: 218px;
+  padding: 24px;
+  gap: 8px;
+  border-radius: 12px;
+}
