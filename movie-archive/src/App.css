@@ -18,7 +18,29 @@ p {
   gap: 80px;
   opacity: 1;
 }
+.SideBar_s {
+  width: 232px;
+  height: 100px;
+  margin: 10px;
+  gap: 16px;
+  opacity: 1;
+}
+.SideBar_s button {
+  margin: 8px;
+  opacity: 1;
+}
+
 .MainSection {
+  position: absolute;
+  background-color: #eaebed;
+  width: 980px;
+  height: 2660px;
+  top: 40px;
+  left: 370px;
+  gap: 40px;
+  opacity: 1;
+}
+.BigMovieCard {
   position: absolute;
   background-color: #eaebed;
   width: 980px;
@@ -32,7 +54,7 @@ p {
   width: 980px;
   height: 48px;
   font-weight: bold;
-  font-size: 32px;
+  font-size: 20px;
   gap: 40px;
   justify-content: space-between;
   opacity: 1;
@@ -57,6 +79,7 @@ button.Button.active {
   color: #9854f6;
   width: 232 px;
   height: 42px px;
+  font-weight: bold;
 }
 
 .DropdownMenu {
@@ -73,7 +96,7 @@ button.Button.active {
   grid-template-columns: 482px 482px;
   width: 980px;
   height: 2660px;
-  gap: 8px;
+  gap: 16px;
 }
 .MovieCard {
   display: flex;
@@ -83,7 +106,7 @@ button.Button.active {
   height: 198px;
   padding: 24px;
   margin: 0px;
-  gap: 8px;
+  gap: 16px;
   border-radius: 12px;
   opacity: 1;
 }

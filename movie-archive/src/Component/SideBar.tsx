@@ -13,14 +13,7 @@ export default function SideBar({ Change }: SideBarProps) {
 
   return (
     <div className="SideBar">
-      <div
-        style={{
-          width: "232px",
-          height: "Hug (100px)px",
-          gap: "16px",
-          opacity: "0px",
-        }}
-      >
+      <div className="SideBar_s">
         <Button
           isActive={active === "1"}
           onClick={() => {
@@ -30,6 +23,7 @@ export default function SideBar({ Change }: SideBarProps) {
         >
           Movie
         </Button>
+
         <br></br>
         <Button
           isActive={active === "2"}
