@@ -10,7 +10,7 @@ export const Url1 =
 //let data: any = await response.json();
 //return data;
 
-export const genres: object = {
+export const genres = {
   28: "Action",
   12: "Adventure",
   16: "Animation",

@@ -5,7 +5,7 @@ interface SideBarProps {
   Change: (arg0: string) => void;
 }
 export default function SideBar({ Change }: SideBarProps) {
-  const [active, SetActive] = useState("0");
+  const [active, SetActive] = useState("1");
 
   function handleClick(type: string) {
     SetActive(type);

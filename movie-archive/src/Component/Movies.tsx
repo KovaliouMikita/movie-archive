@@ -24,12 +24,12 @@ export default function Movies({
         <p>Movies</p>
       </div>
       <div className="DropdownMenu">
-        <form action="sd">
+        {/* <form action="sd">
           <label htmlFor="as">gdf</label>
           <textarea name="a" id="">
             sds
           </textarea>
-        </form>
+        </form> */}
         <p>Genres</p> <p>release year</p> <p> rating</p>
       </div>
 

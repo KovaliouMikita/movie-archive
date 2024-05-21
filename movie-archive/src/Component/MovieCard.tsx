@@ -26,7 +26,7 @@ export default function MovieCard({ dataMovie, setSection }: MovieCardProps) {
             <p className="Grey16">({dataMovie.vote_count})</p>
           </div>
           <div style={{ display: "flex", gap: "2px" }}>
-            {dataMovie.genre_ids.map((i): string => (
+            {dataMovie.genre_ids.map((i: any) => (
               <p key={i}>{genres[i]}</p>
             ))}
           </div>
