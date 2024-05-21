@@ -3,21 +3,21 @@ import { dataProp } from "../App";
 import Button from "./Button";
 
 interface MovieProps {
-  data: dataProp[];
+  dataMovies: dataProp[];
   get: Function;
   setSection: (arg0: string) => void;
   setPage: (arg0: string) => void;
   page: string;
 }
 
-export default function Movie({
-  data,
+export default function Movies({
+  dataMovies,
   setSection,
   setPage,
   page,
   get,
 }: MovieProps) {
-  console.log(data);
+  console.log(dataMovies);
   return (
     <div className="MainSection">
       <div className="Header">
@@ -34,10 +34,10 @@ export default function Movie({
       </div>
 
       <div className="CardSection">
-        {data.map((p: dataProp) => (
+        {dataMovies.map((p: dataProp) => (
           <MovieCard
             setSection={(current: string) => setSection(current)}
-            data={p}
+            dataMovie={p}
             key={p.id}
           />
         ))}

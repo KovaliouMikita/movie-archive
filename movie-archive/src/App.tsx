@@ -1,6 +1,6 @@
 import "./App.css";
 import Rate from "./Component/Rate";
-import Movie from "./Component/Movie";
+import Movie from "./Component/Movies";
 import SideBar from "./Component/SideBar";
 import { Url } from "./assets/key";
 
@@ -18,18 +18,17 @@ export interface dataProp {
 }
 function App() {
   const [section, setSection] = useState("Movie");
-  const [dataMovie, setDataMovie] = useState<dataProp[]>([]);
+  const [dataMovies, setDataMovies] = useState<dataProp[]>([]);
   const [page, setPage] = useState("1");
   // const [id, setId] = useState<number>();
 
   function dataFetch(page: string) {
     fetch(Url + `&page=${page}`)
       .then((res) => res.json())
-      .then((data) => setDataMovie(data.results));
+      .then((data) => setDataMovies(data.results));
   }
   useEffect(() => {
     dataFetch(page);
-    console.log(`page` + page);
   }, [page]);
 
   return (
@@ -42,7 +41,7 @@ function App() {
             setPage={setPage}
             page={page}
             setSection={setSection}
-            data={dataMovie}
+            dataMovies={dataMovies}
           ></Movie>
         </>
       )}
