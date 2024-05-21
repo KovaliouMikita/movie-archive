@@ -1,6 +1,12 @@
 .App {
+  width: 1920px;
+  height: max-content;
+  background: #eaebed;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+p {
+  margin: 0px;
 }
 .SideBar {
   background-color: #f2ebf9;
@@ -13,7 +19,7 @@
   opacity: 1;
 }
 .MainSection {
-  position: fixed;
+  position: absolute;
   background-color: #eaebed;
   width: 980px;
   height: 2660px;
@@ -27,10 +33,9 @@
   height: 48px;
   font-weight: bold;
   font-size: 32px;
-  gap: 0px;
+  gap: 40px;
   justify-content: space-between;
   opacity: 1;
-  margin: 10px;
 }
 button.Button {
   font-size: 22px;
@@ -63,18 +68,48 @@ button.Button.active {
   gap: 8px;
 }
 .CardSection {
-  background: blue;
+  background: #eaebed;
   display: grid;
   grid-template-columns: 482px 482px;
   width: 980px;
-  height: auto;
+  height: 2660px;
   gap: 8px;
 }
 .MovieCard {
-  background: beige;
+  display: flex;
+  justify-content: space-between;
+  background: #ffffff;
   gap: 16px;
-  height: 218px;
+  height: 198px;
   padding: 24px;
+  margin: 0px;
   gap: 8px;
   border-radius: 12px;
+  opacity: 1;
+}
+.MovieCard img {
+  width: 119px;
+  height: 170px;
+}
+.MovieCard button {
+  width: 28px;
+  height: 28px;
+}
+.CardRow {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 263px;
+  height: 170px;
+}
+.CardRow p {
+  font-size: 16px;
+}
+.TitleName {
+  font-size: 20px;
+  color: #9854f6;
+}
+.Grey16 {
+  font-size: 16px;
+  color: #7b7c88;
 }

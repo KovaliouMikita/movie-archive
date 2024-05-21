@@ -2,7 +2,6 @@ interface ButtonProps {
   children: any;
   onClick?: () => void | string | boolean;
   isActive?: boolean;
-  fullWidth?: any;
 }
 
 export default function Button({ children, onClick, isActive }: ButtonProps) {

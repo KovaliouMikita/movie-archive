@@ -1,20 +1,27 @@
 import MovieCard from "./MovieCard";
-export default function Movie({ data }: any) {
+interface MovieProps {
+  data: dataProps[];
+  setSection: (arg0: string) => void;
+}
+
+export default function Movie({ data, setSection }: MovieProps) {
   return (
     <div className="MainSection">
       <div className="Header">
         <p>Movies</p>
       </div>
       <div className="DropdownMenu">
-        <p>release</p> <p>year rating</p>
+        <p>Genres</p> <p>release year</p> <p> rating</p>
       </div>
 
       <div className="CardSection">
-        <div className="MovieCard">
-          {data.map((p: any) => {
-            <MovieCard p={p} key={p.title}></MovieCard>;
-          })}
-        </div>
+        {data.map((p: any) => (
+          <MovieCard
+            setSection={(current) => setSection(current)}
+            data={p}
+            key={p.id}
+          />
+        ))}
       </div>
     </div>
   );
