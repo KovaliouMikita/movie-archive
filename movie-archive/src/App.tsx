@@ -18,14 +18,14 @@ export interface dataProp {
 }
 function App() {
   const [section, setSection] = useState("Movie");
-  const [dataM, setDataM] = useState<dataProp[]>([]);
+  const [dataMovie, setDataMovie] = useState<dataProp[]>([]);
   const [page, setPage] = useState("1");
   // const [id, setId] = useState<number>();
 
   function dataFetch(page: string) {
     fetch(Url + `&page=${page}`)
       .then((res) => res.json())
-      .then((data) => setDataM(data.results));
+      .then((data) => setDataMovie(data.results));
   }
   useEffect(() => {
     dataFetch(page);
@@ -42,7 +42,7 @@ function App() {
             setPage={setPage}
             page={page}
             setSection={setSection}
-            data={dataM}
+            data={dataMovie}
           ></Movie>
         </>
       )}

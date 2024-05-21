@@ -1,5 +1,6 @@
 import Button from "./Button";
 import { dataProp } from "../App";
+import { genres } from "../assets/key";
 
 interface MovieCardProps {
   data: dataProp;
@@ -24,7 +25,11 @@ export default function MovieCard({ data, setSection }: MovieCardProps) {
             <p>{data.vote_average}</p>{" "}
             <p className="Grey16">({data.vote_count})</p>
           </div>
-          <p>{data.genre_ids}</p>
+          <div style={{ display: "flex", gap: "2px" }}>
+            {data.genre_ids.map((i): string => (
+              <p key={i}>{genres[i]}</p>
+            ))}
+          </div>
         </div>
         <Button>*</Button>
       </div>
