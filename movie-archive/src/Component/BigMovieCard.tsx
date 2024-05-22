@@ -85,11 +85,9 @@ export default function BigMovieCard({
           <div className="TralerBlock">
             <p className="Bold20">Traler</p>
             <iframe
-              width="560"
-              height="315"
               src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=1I2E1mAYNqOiw660"
               title="YouTube video player"
-              // frameborder="0"
+              frameBorder="1"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               // referrerpolicy="strict-origin-when-cross-origin"
               // allowfullscreen

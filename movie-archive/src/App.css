@@ -117,6 +117,11 @@ a:hover {
   flex-direction: column;
   gap: 16px;
 }
+.TralerBlock iframe {
+  width: 500px;
+  height: 281px;
+  border-radius: 9px;
+}
 .DiscriptionBlock {
   display: flex;
   flex-direction: column;
