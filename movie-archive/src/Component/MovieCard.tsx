@@ -1,22 +1,23 @@
 import Button from "./Button";
 import { dataProp } from "../App";
-import { genres } from "../assets/key";
+import { genresData } from "../assets/key";
 
 interface MovieCardProps {
   dataMovie: dataProp;
   setSection: (_arg0: string) => void;
   setIdMovie: Function;
-  genresi: object;
+  genres: object;
 }
 
 export default function MovieCard({
   dataMovie,
   setSection,
-  //genresi,
+  genres,
   setIdMovie,
 }: MovieCardProps) {
   return (
     <>
+      {genres === genres}
       <div className="MovieCard">
         <img
           src={`https://image.tmdb.org/t/p/w500${dataMovie.poster_path}`}
@@ -42,7 +43,7 @@ export default function MovieCard({
           <div className="MovieCard_Genres">
             <p className="Grey16">Genres</p>
             {dataMovie?.genre_ids.map((i: number) => (
-              <p key={i}>{genres[i]}</p>
+              <p key={i}>{genresData[i]}</p>
             ))}
           </div>
         </div>

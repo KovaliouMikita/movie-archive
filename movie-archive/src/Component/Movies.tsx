@@ -41,7 +41,7 @@ export default function Movies({
           <MovieCard
             setSection={(current: string) => setSection(current)}
             dataMovie={p}
-            genresi={genres}
+            genres={genres}
             setIdMovie={setIdMovie}
             key={p.id}
           />

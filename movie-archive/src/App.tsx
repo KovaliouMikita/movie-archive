@@ -5,7 +5,7 @@ import Movie from "./Component/Movies";
 import SideBar from "./Component/SideBar";
 import { Url, UrlGenres } from "./assets/key";
 import { useEffect, useState } from "react";
-//import { useCallback } from "react";
+import { useCallback } from "react";
 import BigMovieCard from "./Component/BigMovieCard";
 
 export interface productionCompaniesProps {
@@ -45,19 +45,25 @@ function App() {
       .then((data) => setDataMovies(data.results));
   }
 
-  async function fetchGenres() {
+  async function genresFetch() {
     const response = await fetch(UrlGenres);
     const data = await response.json();
     return data.genres;
   }
 
+  const getAllFentch = useCallback(
+    (page: any) => {
+      dataFetch(page);
+      genresFetch().then((res) => setGenres(res));
+    },
+    [genres, dataMovies]
+  );
   useEffect(() => {
-    dataFetch(page);
-    fetchGenres().then((res) => setGenres(res));
+    //dataFetch(page);
+    //fetchGenres().then((res) => setGenres(res));
+    getAllFentch(page);
   }, [page]);
-
   console.log(dataMovies);
-
   return (
     <div className="App">
       <SideBar Change={(current: string) => setSection(current)}></SideBar>

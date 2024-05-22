@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Api_k, UrlIdMovie } from "../assets/key";
 
 import Button from "./Button";
@@ -20,10 +20,17 @@ export default function BigMovieCard({
       .then((res) => res.json())
       .then((data) => setDataMovie(data));
   }
+
+  const getMovie = useCallback(
+    (idMovie: number) => {
+      dataFetch(idMovie);
+    },
+    [dataMovie]
+  );
   useEffect(() => {
-    dataFetch(idMovie);
-  }, []);
-  // console.log(dataMovie);
+    getMovie(idMovie);
+  }, [idMovie]);
+
   return (
     <>
       <div className="BigMovieCard">

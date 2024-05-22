@@ -6,7 +6,7 @@ export const UrlGenres =
 
 // Url  SEARCH  ==>  https://api.themoviedb.org/3/search/movie
 // URL DETAILS MOVIE ID ===> https://api.themoviedb.org/3/movie/
-export const genres: Record<string, string> = {
+export const genresData: Record<string, string> = {
   28: "Action",
   12: "Adventure",
   16: "Animation",
