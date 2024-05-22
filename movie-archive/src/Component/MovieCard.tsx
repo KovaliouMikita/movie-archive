@@ -18,21 +18,19 @@ export default function MovieCard({
   return (
     <>
       {genres === genres}
-      <div className="MovieCard">
+      <div
+        onClick={() => {
+          setSection("BigMovieCard");
+          setIdMovie(dataMovie.id);
+        }}
+        className="MovieCard"
+      >
         <img
           src={`https://image.tmdb.org/t/p/w500${dataMovie.poster_path}`}
           alt="not IMG"
         />
         <div className="CardRow">
-          <p
-            className="TitleName"
-            onClick={() => {
-              setSection("BigMovieCard");
-              setIdMovie(dataMovie.id);
-            }}
-          >
-            {dataMovie.title}
-          </p>
+          <p className="TitleName">{dataMovie.title}</p>
 
           <p className="Grey16">{dataMovie.release_date.slice(0, 4)}</p>
           <div className="RateBlock">

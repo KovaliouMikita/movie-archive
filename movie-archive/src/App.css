@@ -46,6 +46,8 @@ a:hover {
   height: 2660px;
   top: 40px;
   left: 370px;
+  display: flex;
+  flex-direction: column;
   gap: 40px;
   opacity: 1;
 }
@@ -188,7 +190,7 @@ button.Button.active {
   display: grid;
   grid-template-columns: 482px 482px;
   width: 980px;
-  height: 2660px;
+  /* height: 2324px; */
   gap: 16px;
 }
 .Movies_Pages {

@@ -4,6 +4,8 @@ export const UrlIdMovie = `https://api.themoviedb.org/3/movie/`;
 export const UrlGenres =
   "https://api.themoviedb.org/3/genre/movie/list?api_key=a3247e1d159fd499550d53f6ec5ef6d7";
 
+export const appendMovie = "&append_to_response=videos";
+
 // Url  SEARCH  ==>  https://api.themoviedb.org/3/search/movie
 // URL DETAILS MOVIE ID ===> https://api.themoviedb.org/3/movie/
 export const genresData: Record<string, string> = {
@@ -27,3 +29,11 @@ export const genresData: Record<string, string> = {
   10752: "War",
   37: "Western",
 };
+const vidio =
+  "https://api.themoviedb.org/3/movie/157336/videos?api_key=a3247e1d159fd499550d53f6ec5ef6d7";
+export async function test() {
+  const response = await fetch(vidio);
+  const data = await response.json();
+  console.log(data);
+  return data;
+}

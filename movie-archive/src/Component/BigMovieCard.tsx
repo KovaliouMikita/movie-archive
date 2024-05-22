@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { Api_k, UrlIdMovie } from "../assets/key";
-
+import { Api_k, UrlIdMovie, appendMovie } from "../assets/key";
 import Button from "./Button";
 import { dataProp, genresProps, productionCompaniesProps } from "../App";
 
@@ -16,7 +15,7 @@ export default function BigMovieCard({
   const [dataMovie, setDataMovie] = useState<dataProp>();
 
   function dataFetch(id: number) {
-    fetch(UrlIdMovie + id + Api_k)
+    fetch(UrlIdMovie + id + Api_k + appendMovie)
       .then((res) => res.json())
       .then((data) => setDataMovie(data));
   }
@@ -30,7 +29,7 @@ export default function BigMovieCard({
   useEffect(() => {
     getMovie(idMovie);
   }, [idMovie]);
-
+  console.log(dataMovie);
   return (
     <>
       <div className="BigMovieCard">
@@ -85,6 +84,16 @@ export default function BigMovieCard({
         <div className="More_Detales">
           <div className="TralerBlock">
             <p className="Bold20">Traler</p>
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=1I2E1mAYNqOiw660"
+              title="YouTube video player"
+              // frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              // referrerpolicy="strict-origin-when-cross-origin"
+              // allowfullscreen
+            ></iframe>
           </div>
           <hr></hr>
           <div className="DiscriptionBlock">
