@@ -30,15 +30,16 @@ export default function MovieCard({
           >
             {dataMovie.title}
           </p>
-          <p>{dataMovie.id}</p>
+
           <p className="Grey16">{dataMovie.release_date.slice(0, 4)}</p>
-          <div style={{ display: "flex", gap: "8px" }}>
+          <div className="RateBlock">
             <Button>*</Button>
             <p>{dataMovie.vote_average}</p>{" "}
             <p className="Grey16">({dataMovie.vote_count})</p>
           </div>
-          <div style={{ display: "flex", gap: "2px" }}>
-            {dataMovie.genre_ids.map((i: any) => (
+          <div className="MovieCard_Genres">
+            <p className="Grey16">Genres</p>
+            {dataMovie?.genre_ids.map((i: number) => (
               <p key={i}>{genres[i]}</p>
             ))}
           </div>

@@ -7,6 +7,14 @@ import { Url } from "./assets/key";
 import { useEffect, useState } from "react";
 import BigMovieCard from "./Component/BigMovieCard";
 
+export interface productionCompaniesProps {
+  logo_path?: string;
+  name?: string;
+}
+export interface genresProps {
+  name?: string;
+  id?: number;
+}
 export interface dataProp {
   poster_path?: string;
   title: string;
@@ -15,12 +23,19 @@ export interface dataProp {
   vote_average: number;
   vote_count: number;
   genre_ids: number[];
+  runtime?: number;
+  budget?: number;
+  revenue?: number;
+  genres?: genresProps[];
+  overview: string;
+  production_companies: productionCompaniesProps[];
 }
+
 function App() {
   const [section, setSection] = useState("Movies");
   const [dataMovies, setDataMovies] = useState<dataProp[]>([]);
   const [page, setPage] = useState("1");
-  const [idMovie, setIdMovie] = useState<number>();
+  const [idMovie, setIdMovie] = useState(0);
 
   function dataFetch(page: string) {
     fetch(Url + `&page=${page}`)

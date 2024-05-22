@@ -19,11 +19,10 @@ export default function Movies({
   get,
   setIdMovie,
 }: MovieProps) {
-  console.log(dataMovies);
   return (
     <div className="MainSection">
       <div className="Header">
-        <p>Movies</p>
+        <a>Movies</a>
       </div>
       <div className="DropdownMenu">
         {/* <form action="sd">
@@ -45,13 +44,12 @@ export default function Movies({
           />
         ))}
       </div>
-      <div style={{ display: "flex" }}>
+      <div className="Movies_Pages">
         <Button
           isActive={page === "1"}
           onClick={() => {
             setPage("1");
             get("1");
-            console.log(page);
           }}
         >
           1
@@ -61,7 +59,6 @@ export default function Movies({
           onClick={() => {
             setPage("2");
             get("2");
-            console.log(page);
           }}
         >
           2
@@ -71,7 +68,6 @@ export default function Movies({
           onClick={() => {
             setPage("3");
             get("3");
-            console.log(page);
           }}
         >
           3

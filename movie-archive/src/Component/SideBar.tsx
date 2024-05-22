@@ -21,10 +21,9 @@ export default function SideBar({ Change }: SideBarProps) {
             Change("Movies");
           }}
         >
-          Movie
+          Movies
         </Button>
 
-        <br></br>
         <Button
           isActive={active === "2"}
           onClick={() => {
@@ -32,7 +31,7 @@ export default function SideBar({ Change }: SideBarProps) {
             Change("Rate");
           }}
         >
-          Rated Movie
+          Rated movies
         </Button>
       </div>
     </div>
