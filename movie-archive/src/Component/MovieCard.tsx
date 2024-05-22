@@ -5,9 +5,14 @@ import { genres } from "../assets/key";
 interface MovieCardProps {
   dataMovie: dataProp;
   setSection: (_arg0: string) => void;
+  setIdMovie: Function;
 }
 
-export default function MovieCard({ dataMovie, setSection }: MovieCardProps) {
+export default function MovieCard({
+  dataMovie,
+  setSection,
+  setIdMovie,
+}: MovieCardProps) {
   return (
     <>
       <div className="MovieCard">
@@ -16,9 +21,16 @@ export default function MovieCard({ dataMovie, setSection }: MovieCardProps) {
           alt="not IMG"
         />
         <div className="CardRow">
-          <p className="TitleName" onClick={() => setSection("BigMovieCard")}>
+          <p
+            className="TitleName"
+            onClick={() => {
+              setSection("BigMovieCard");
+              setIdMovie(dataMovie.id);
+            }}
+          >
             {dataMovie.title}
           </p>
+          <p>{dataMovie.id}</p>
           <p className="Grey16">{dataMovie.release_date.slice(0, 4)}</p>
           <div style={{ display: "flex", gap: "8px" }}>
             <Button>*</Button>

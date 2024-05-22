@@ -18,7 +18,7 @@ export default function SideBar({ Change }: SideBarProps) {
           isActive={active === "1"}
           onClick={() => {
             handleClick("1");
-            Change("Movie");
+            Change("Movies");
           }}
         >
           Movie

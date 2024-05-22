@@ -8,6 +8,7 @@ interface MovieProps {
   setSection: (arg0: string) => void;
   setPage: (arg0: string) => void;
   page: string;
+  setIdMovie: Function;
 }
 
 export default function Movies({
@@ -16,6 +17,7 @@ export default function Movies({
   setPage,
   page,
   get,
+  setIdMovie,
 }: MovieProps) {
   console.log(dataMovies);
   return (
@@ -38,6 +40,7 @@ export default function Movies({
           <MovieCard
             setSection={(current: string) => setSection(current)}
             dataMovie={p}
+            setIdMovie={setIdMovie}
             key={p.id}
           />
         ))}

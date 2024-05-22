@@ -17,10 +17,10 @@ export interface dataProp {
   genre_ids: number[];
 }
 function App() {
-  const [section, setSection] = useState("Movie");
+  const [section, setSection] = useState("Movies");
   const [dataMovies, setDataMovies] = useState<dataProp[]>([]);
   const [page, setPage] = useState("1");
-  // const [id, setId] = useState<number>();
+  const [idMovie, setIdMovie] = useState<number>();
 
   function dataFetch(page: string) {
     fetch(Url + `&page=${page}`)
@@ -34,7 +34,7 @@ function App() {
   return (
     <div className="App">
       <SideBar Change={(current: string) => setSection(current)}></SideBar>
-      {section === "Movie" && (
+      {section === "Movies" && (
         <>
           <Movie
             get={dataFetch}
@@ -42,11 +42,14 @@ function App() {
             page={page}
             setSection={setSection}
             dataMovies={dataMovies}
+            setIdMovie={setIdMovie}
           ></Movie>
         </>
       )}
       {section === "Rate" && <Rate></Rate>}
-      {section === "BigMovieCard" && <BigMovieCard />}
+      {section === "BigMovieCard" && (
+        <BigMovieCard idMovie={idMovie} setSection={setSection} />
+      )}
     </div>
   );
 }

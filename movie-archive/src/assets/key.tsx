@@ -1,15 +1,9 @@
-export const Api_k = "a3247e1d159fd499550d53f6ec5ef6d7";
+export const Api_k = "?api_key=a3247e1d159fd499550d53f6ec5ef6d7";
 export const Url = `https://api.themoviedb.org/3/movie/popular?api_key=a3247e1d159fd499550d53f6ec5ef6d7`;
-export const Url1 =
-  "https://api.themoviedb.org/3/discover/movie?api_key=a3247e1d159fd499550d53f6ec5ef6d7&page=2";
+export const UrlIdMovie = `https://api.themoviedb.org/3/movie/`;
 
-//export async function getPage(page: string) {
-///////////////////////////////////////////////fetch(Url1 + page).then(res=> res.json).then(data =>data.results)
-//async function dataFetch(): Promise<any> {
-//let response: any = await fetch(Url1 + page);
-//let data: any = await response.json();
-//return data;
-
+// Url  SEARCH  ==>  https://api.themoviedb.org/3/search/movie
+// URL DETAILS MOVIE ID ===> https://api.themoviedb.org/3/movie/
 export const genres = {
   28: "Action",
   12: "Adventure",
