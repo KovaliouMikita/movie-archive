@@ -1,10 +1,11 @@
+import "@mantine/core/styles.css";
 import "./App.css";
 import Rate from "./Component/Rate";
 import Movie from "./Component/Movies";
 import SideBar from "./Component/SideBar";
-import { Url } from "./assets/key";
-
+import { Url, UrlGenres } from "./assets/key";
 import { useEffect, useState } from "react";
+//import { useCallback } from "react";
 import BigMovieCard from "./Component/BigMovieCard";
 
 export interface productionCompaniesProps {
@@ -36,15 +37,26 @@ function App() {
   const [dataMovies, setDataMovies] = useState<dataProp[]>([]);
   const [page, setPage] = useState("1");
   const [idMovie, setIdMovie] = useState(0);
+  const [genres, setGenres] = useState({});
 
   function dataFetch(page: string) {
     fetch(Url + `&page=${page}`)
       .then((res) => res.json())
       .then((data) => setDataMovies(data.results));
   }
+
+  async function fetchGenres() {
+    const response = await fetch(UrlGenres);
+    const data = await response.json();
+    return data.genres;
+  }
+
   useEffect(() => {
     dataFetch(page);
+    fetchGenres().then((res) => setGenres(res));
   }, [page]);
+
+  console.log(dataMovies);
 
   return (
     <div className="App">
@@ -57,6 +69,7 @@ function App() {
             page={page}
             setSection={setSection}
             dataMovies={dataMovies}
+            genres={genres}
             setIdMovie={setIdMovie}
           ></Movie>
         </>

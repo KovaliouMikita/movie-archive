@@ -1,10 +1,12 @@
 export const Api_k = "?api_key=a3247e1d159fd499550d53f6ec5ef6d7";
 export const Url = `https://api.themoviedb.org/3/movie/popular?api_key=a3247e1d159fd499550d53f6ec5ef6d7`;
 export const UrlIdMovie = `https://api.themoviedb.org/3/movie/`;
+export const UrlGenres =
+  "https://api.themoviedb.org/3/genre/movie/list?api_key=a3247e1d159fd499550d53f6ec5ef6d7";
 
 // Url  SEARCH  ==>  https://api.themoviedb.org/3/search/movie
 // URL DETAILS MOVIE ID ===> https://api.themoviedb.org/3/movie/
-export const genres = {
+export const genres: Record<string, string> = {
   28: "Action",
   12: "Adventure",
   16: "Animation",

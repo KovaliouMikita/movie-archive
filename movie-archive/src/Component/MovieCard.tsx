@@ -6,11 +6,13 @@ interface MovieCardProps {
   dataMovie: dataProp;
   setSection: (_arg0: string) => void;
   setIdMovie: Function;
+  genresi: object;
 }
 
 export default function MovieCard({
   dataMovie,
   setSection,
+  //genresi,
   setIdMovie,
 }: MovieCardProps) {
   return (

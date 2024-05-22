@@ -23,7 +23,7 @@ export default function BigMovieCard({
   useEffect(() => {
     dataFetch(idMovie);
   }, []);
-
+  // console.log(dataMovie);
   return (
     <>
       <div className="BigMovieCard">
