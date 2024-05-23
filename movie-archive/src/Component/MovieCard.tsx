@@ -1,7 +1,6 @@
-import Button from "./Button";
 import { dataProp } from "../App";
-//import { genresData } from "../assets/key";
 import { IconStar } from "@tabler/icons-react";
+import { ActionIcon, rem } from "@mantine/core";
 
 interface MovieCardProps {
   dataMovie: dataProp;
@@ -18,15 +17,12 @@ export default function MovieCard({
 }: MovieCardProps) {
   return (
     <>
-      {genres === genres}
-      <div
-        onClick={() => {
-          setSection("BigMovieCard");
-          setIdMovie(dataMovie.id);
-        }}
-        className="MovieCard"
-      >
+      <div className="MovieCard">
         <img
+          onClick={() => {
+            setSection("BigMovieCard");
+            setIdMovie(dataMovie.id);
+          }}
           src={`https://image.tmdb.org/t/p/w500${dataMovie.poster_path}`}
           alt="not IMG"
         />
@@ -35,7 +31,7 @@ export default function MovieCard({
 
           <p className="Grey16">{dataMovie.release_date.slice(0, 4)}</p>
           <div className="RateBlock">
-            <IconStar />
+            <IconStar size={18} />
             <p>{dataMovie.vote_average}</p>{" "}
             <p className="Grey16">({dataMovie.vote_count})</p>
           </div>
@@ -50,9 +46,9 @@ export default function MovieCard({
             ))}
           </div>
         </div>
-        <Button>
-          <IconStar />
-        </Button>
+        <ActionIcon variant="default" size="28" aria-label="Star">
+          <IconStar style={{ width: rem(20) }} stroke={1.5} />
+        </ActionIcon>
       </div>
     </>
   );

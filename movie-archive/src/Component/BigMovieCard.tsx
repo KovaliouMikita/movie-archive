@@ -1,11 +1,9 @@
 import { useCallback, useEffect, useState } from "react";
 import { Api_k, UrlIdMovie, appendMovie } from "../assets/key";
 import { IconStar } from "@tabler/icons-react";
-
 import { dataProp, genresProps, productionCompaniesProps } from "../App";
-import Button from "./Button";
 import { useDisclosure } from "@mantine/hooks";
-import { Modal } from "@mantine/core";
+import { Modal, ActionIcon, rem } from "@mantine/core";
 
 interface BigMovieCardProps {
   idMovie: number;
@@ -89,9 +87,15 @@ export default function BigMovieCard({
               </div>
             </div>
           </div>
-          <Button onClick={open}>
-            <IconStar style={{ width: "28px" }} />
-          </Button>
+
+          <ActionIcon
+            onClick={open}
+            variant="default"
+            size="28"
+            aria-label="Star"
+          >
+            <IconStar style={{ width: rem(20) }} stroke={1.5} />
+          </ActionIcon>
         </div>
         <div className="More_Detales">
           <div className="TralerBlock">
