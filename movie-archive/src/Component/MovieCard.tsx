@@ -1,6 +1,6 @@
 import Button from "./Button";
 import { dataProp } from "../App";
-import { genresData } from "../assets/key";
+//import { genresData } from "../assets/key";
 import { IconStar } from "@tabler/icons-react";
 
 interface MovieCardProps {
@@ -42,7 +42,11 @@ export default function MovieCard({
           <div className="MovieCard_Genres">
             <p className="Grey16">Genres</p>
             {dataMovie?.genre_ids.map((i: number) => (
-              <p key={i}>{genresData[i]}</p>
+              <p key={i}>
+                {genres.map((el: any) => {
+                  return el.id === i ? el.name : "";
+                })}
+              </p>
             ))}
           </div>
         </div>
