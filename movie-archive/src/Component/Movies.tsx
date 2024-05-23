@@ -1,6 +1,8 @@
 import MovieCard from "./MovieCard";
 import { dataProp } from "../App";
 import Button from "./Button";
+import { Select } from "@mantine/core";
+import classes from "./Css/ContainedInput.module.css";
 
 interface MovieProps {
   dataMovies: dataProp[];
@@ -9,7 +11,7 @@ interface MovieProps {
   setPage: (arg0: string) => void;
   page: string;
   setIdMovie: Function;
-  genres: object;
+  genres: object[];
 }
 
 export default function Movies({
@@ -21,19 +23,54 @@ export default function Movies({
   genres,
   setIdMovie,
 }: MovieProps) {
+  console.log(genres);
   return (
     <div className="MainSection">
       <div className="Header">
         <a>Movies</a>
       </div>
       <div className="DropdownMenu">
-        {/* <form action="sd">
-          <label htmlFor="as">gdf</label>
-          <textarea name="a" id="">
-            sds
-          </textarea>
-        </form> */}
-        <p>Genres</p> <p>release year</p> <p> rating</p>
+        <>
+          <Select
+            mt="md"
+            comboboxProps={{ withinPortal: true }}
+            data={genres.map((el: any) => el?.name)}
+            placeholder="Select genre"
+            label="Genres"
+            classNames={classes}
+          />
+        </>
+        <>
+          <Select
+            mt="md"
+            comboboxProps={{ withinPortal: true }}
+            data={genres.map((el: any) => el?.name)}
+            placeholder="Select release year"
+            label="Release year"
+            classNames={classes}
+          />
+        </>
+        <>
+          <Select
+            mt="md"
+            comboboxProps={{ withinPortal: true }}
+            data={genres.map((el: any) => el?.name)}
+            placeholder="From"
+            label="Rating"
+            classNames={classes}
+          />
+        </>
+        <>
+          <Select
+            mt="md"
+            comboboxProps={{ withinPortal: true }}
+            data={genres.map((el: any) => el?.name)}
+            placeholder="To"
+            label="/"
+            classNames={classes}
+          />
+        </>
+        <Button>Reset filtres</Button>
       </div>
 
       <div className="CardSection">

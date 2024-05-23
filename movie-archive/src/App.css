@@ -164,7 +164,8 @@ button.Button {
   font: Inter;
   width: 232px;
   height: 42px px;
-  text-align: start;
+  align-items: center;
+  justify-content: center;
   background-color: #f2ebf9;
   padding: 10px;
   gap: 10px;
@@ -272,4 +273,11 @@ hr {
   height: 1px;
   color: black;
   background: #d5d6dc;
+}
+
+.BigMovieCard_Contener Button {
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
 }

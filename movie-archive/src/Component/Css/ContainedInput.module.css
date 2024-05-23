@@ -1,0 +1,24 @@
+.root {
+  position: relative;
+}
+
+.input {
+  height: 42px;
+  padding-top: rem(18px);
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.label {
+  /* position: absolute; */
+  pointer-events: none;
+  font-size: 16px;
+  padding-left: var(--mantine-spacing-sm);
+  padding-top: calc(var(--mantine-spacing-sm) / 2);
+  z-index: 1;
+}
+._input_v68tw_9.m_8fb7ebe7.mantine-Input-input.mantine-Select-input {
+  display: flex;
+  justify-content: center;
+  font-size: 17px;
+}

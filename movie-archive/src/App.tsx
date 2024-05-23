@@ -32,17 +32,20 @@ export interface dataProp {
   production_companies: productionCompaniesProps[];
 }
 
-function App() {
+export default function App() {
   const [section, setSection] = useState("Movies");
   const [dataMovies, setDataMovies] = useState<dataProp[]>([]);
   const [page, setPage] = useState("1");
   const [idMovie, setIdMovie] = useState(0);
-  const [genres, setGenres] = useState({});
+  const [genres, setGenres] = useState<object[]>([]);
 
   function dataFetch(page: string) {
     fetch(Url + `&page=${page}`)
       .then((res) => res.json())
-      .then((data) => setDataMovies(data.results));
+      .then((data) => {
+        setDataMovies(data.results);
+        console.log(data);
+      });
   }
 
   async function genresFetch() {
@@ -87,5 +90,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

@@ -1,7 +1,11 @@
 import { useCallback, useEffect, useState } from "react";
 import { Api_k, UrlIdMovie, appendMovie } from "../assets/key";
-import Button from "./Button";
+import { IconStar } from "@tabler/icons-react";
+
 import { dataProp, genresProps, productionCompaniesProps } from "../App";
+import Button from "./Button";
+import { useDisclosure } from "@mantine/hooks";
+import { Modal } from "@mantine/core";
 
 interface BigMovieCardProps {
   idMovie: number;
@@ -13,6 +17,7 @@ export default function BigMovieCard({
   setSection,
 }: BigMovieCardProps) {
   const [dataMovie, setDataMovie] = useState<dataProp>();
+  const [opened, { open, close }] = useDisclosure(false);
 
   function dataFetch(id: number) {
     fetch(UrlIdMovie + id + Api_k + appendMovie)
@@ -32,6 +37,10 @@ export default function BigMovieCard({
   console.log(dataMovie);
   return (
     <>
+      <Modal opened={opened} onClose={close} title="Authentication" centered>
+        {/* Modal content */}
+      </Modal>
+
       <div className="BigMovieCard">
         <div className="BigMoviesCard_link">
           <a onClick={() => setSection("Movies")}>Movie</a> <p>/</p>
@@ -50,7 +59,7 @@ export default function BigMovieCard({
             </div>
 
             <div className="RateBlock">
-              <Button>*</Button>
+              <IconStar />
               <p>{dataMovie?.vote_average}</p>{" "}
               <p className="Grey16">({dataMovie?.vote_count})</p>
             </div>
@@ -66,11 +75,11 @@ export default function BigMovieCard({
               </div>
               <div className="Flex">
                 <p className="Grey16">Budget</p>
-                <p>{dataMovie?.budget}</p>
+                <p>${dataMovie?.budget}</p>
               </div>
               <div className="Flex">
                 <p className="Grey16">Gross worldwide</p>
-                <p>{dataMovie?.revenue}</p>
+                <p>${dataMovie?.revenue}</p>
               </div>
               <div className="Flex">
                 <p className="Grey16">Genres</p>
@@ -80,6 +89,9 @@ export default function BigMovieCard({
               </div>
             </div>
           </div>
+          <Button onClick={open}>
+            <IconStar style={{ width: "28px" }} />
+          </Button>
         </div>
         <div className="More_Detales">
           <div className="TralerBlock">
@@ -96,9 +108,7 @@ export default function BigMovieCard({
           <hr></hr>
           <div className="DiscriptionBlock">
             <p className="Bold20">Discription</p>
-            <p style={{ fontFamily: "Text base M/Regular" }}>
-              {dataMovie?.overview}
-            </p>
+            <p>{dataMovie?.overview}</p>
           </div>
           <hr />
           <div className="ProductionBlock">

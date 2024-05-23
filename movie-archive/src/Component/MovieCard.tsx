@@ -1,6 +1,7 @@
 import Button from "./Button";
 import { dataProp } from "../App";
 import { genresData } from "../assets/key";
+import { IconStar } from "@tabler/icons-react";
 
 interface MovieCardProps {
   dataMovie: dataProp;
@@ -34,7 +35,7 @@ export default function MovieCard({
 
           <p className="Grey16">{dataMovie.release_date.slice(0, 4)}</p>
           <div className="RateBlock">
-            <Button>*</Button>
+            <IconStar />
             <p>{dataMovie.vote_average}</p>{" "}
             <p className="Grey16">({dataMovie.vote_count})</p>
           </div>
@@ -45,7 +46,9 @@ export default function MovieCard({
             ))}
           </div>
         </div>
-        <Button>*</Button>
+        <Button>
+          <IconStar />
+        </Button>
       </div>
     </>
   );
