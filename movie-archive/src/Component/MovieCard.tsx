@@ -7,7 +7,7 @@ interface MovieCardProps {
   dataMovie: dataProp;
   setSection: (_arg0: string) => void;
   setIdMovie: Function;
-  genres: object;
+  genres: object[];
 }
 
 export default function MovieCard({
