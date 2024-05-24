@@ -23,14 +23,14 @@ export default function BigMovieCard({
       .then((data) => setDataMovie(data));
   }
 
-  const getMovie = useCallback(
+  const getMovieById = useCallback(
     (idMovie: number) => {
       dataFetch(idMovie);
     },
     [dataMovie]
   );
   useEffect(() => {
-    getMovie(idMovie);
+    getMovieById(idMovie);
   }, [idMovie]);
   console.log(dataMovie);
   return (
@@ -101,7 +101,8 @@ export default function BigMovieCard({
           <div className="TralerBlock">
             <p className="Bold20">Traler</p>
             <iframe
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=1I2E1mAYNqOiw660"
+              // https://www.googleapis.com/youtube/v3/videos?id664df669e9b4172c3413fac5   // Origin https://www.youtube.com/embed/dQw4w9WgXcQ?si=1I2E1mAYNqOiw660
+              src="https://www.googleapis.com/youtube/v3/videos?id664df669e9b4172c3413fac5&key=AIzaSyBt9gSoug9xOFTf_6JK1WuAHVzL1h4mW9M"
               title="YouTube video player"
               frameBorder="1"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

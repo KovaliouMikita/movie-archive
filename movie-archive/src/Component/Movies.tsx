@@ -4,7 +4,7 @@ import Button from "./Button";
 import { Select } from "@mantine/core";
 import classes from "./Css/ContainedInput.module.css";
 
-interface MovieProps {
+interface MoviesProps {
   dataMovies: dataProp[];
   get: Function;
   setSection: (arg0: string) => void;
@@ -22,8 +22,7 @@ export default function Movies({
   get,
   genres,
   setIdMovie,
-}: MovieProps) {
-  console.log(genres);
+}: MoviesProps) {
   return (
     <div className="MainSection">
       <div className="Header">

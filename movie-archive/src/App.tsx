@@ -1,12 +1,12 @@
 import "@mantine/core/styles.css";
 import "./App.css";
 import Rate from "./Component/Rate";
-import Movie from "./Component/Movies";
 import SideBar from "./Component/SideBar";
 import { Url, UrlGenres } from "./assets/key";
 import { useEffect, useState } from "react";
 import { useCallback } from "react";
 import BigMovieCard from "./Component/BigMovieCard";
+import Movies from "./Component/Movies";
 // import { Loader } from "@mantine/core";
 
 export interface productionCompaniesProps {
@@ -67,13 +67,13 @@ export default function App() {
     //fetchGenres().then((res) => setGenres(res));
     getAllFentch(page);
   }, [page]);
-  console.log(dataMovies);
+
   return (
     <div className="App">
       <SideBar Change={(current: string) => setSection(current)}></SideBar>
       {section === "Movies" && (
         <>
-          <Movie
+          <Movies
             get={dataFetch}
             setPage={setPage}
             page={page}
@@ -81,7 +81,7 @@ export default function App() {
             dataMovies={dataMovies}
             genres={genres}
             setIdMovie={setIdMovie}
-          ></Movie>
+          ></Movies>
         </>
       )}
       {section === "Rate" && <Rate></Rate>}
