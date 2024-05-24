@@ -3,7 +3,7 @@ import { Api_k, UrlIdMovie, appendMovie } from "../assets/key";
 import { IconStar } from "@tabler/icons-react";
 import { dataProp, genresProps, productionCompaniesProps } from "../App";
 import { useDisclosure } from "@mantine/hooks";
-import { Modal, ActionIcon, rem } from "@mantine/core";
+import { Modal, ActionIcon, rem, Button } from "@mantine/core";
 
 interface BigMovieCardProps {
   idMovie: number;
@@ -35,8 +35,11 @@ export default function BigMovieCard({
   console.log(dataMovie);
   return (
     <>
-      <Modal opened={opened} onClose={close} title="Authentication" centered>
-        {/* Modal content */}
+      <Modal opened={opened} onClose={close} title="Your rating" centered>
+        <Button.Group>
+          <Button>Save</Button>
+          <Button>Remove rating</Button>
+        </Button.Group>
       </Modal>
 
       <div className="BigMovieCard">
@@ -101,8 +104,7 @@ export default function BigMovieCard({
           <div className="TralerBlock">
             <p className="Bold20">Traler</p>
             <iframe
-              // https://www.googleapis.com/youtube/v3/videos?id664df669e9b4172c3413fac5   // Origin https://www.youtube.com/embed/dQw4w9WgXcQ?si=1I2E1mAYNqOiw660
-              src="https://www.googleapis.com/youtube/v3/videos?id664df669e9b4172c3413fac5&key=AIzaSyBt9gSoug9xOFTf_6JK1WuAHVzL1h4mW9M"
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=1I2E1mAYNqOiw660"
               title="YouTube video player"
               frameBorder="1"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

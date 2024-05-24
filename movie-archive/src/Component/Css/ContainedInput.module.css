@@ -17,7 +17,3 @@
   padding-top: calc(var(--mantine-spacing-sm) / 2);
   z-index: 1;
 }
-
-.label:hover {
-  background-color: magenta;
-}

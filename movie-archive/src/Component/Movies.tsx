@@ -1,28 +1,33 @@
 import MovieCard from "./MovieCard";
 import { dataProp } from "../App";
-import Button from "./Button";
-import { Select } from "@mantine/core";
+import { Flex, Select } from "@mantine/core";
 import classes from "./Css/ContainedInput.module.css";
+import { Button } from "@mantine/core";
 
 interface MoviesProps {
   dataMovies: dataProp[];
-  get: Function;
   setSection: (arg0: string) => void;
-  setPage: (arg0: string) => void;
-  page: string;
+  setPage: (arg0: number) => void;
   setIdMovie: Function;
   genres: object[];
+  setMovieList: Function;
 }
 
 export default function Movies({
   dataMovies,
   setSection,
   setPage,
-  page,
-  get,
   genres,
   setIdMovie,
+  setMovieList,
 }: MoviesProps) {
+  function getDataRange() {
+    let Array = [];
+    for (let i = 1922; i < 2024; i++) {
+      Array.push(`${i}`);
+    }
+    return Array;
+  }
   return (
     <div className="MainSection">
       <div className="Header">
@@ -43,7 +48,7 @@ export default function Movies({
           <Select
             mt="md"
             comboboxProps={{ withinPortal: true }}
-            data={genres.map((el: any) => el?.name)}
+            data={getDataRange()}
             placeholder="Select release year"
             label="Release year"
             classNames={classes}
@@ -53,7 +58,7 @@ export default function Movies({
           <Select
             mt="md"
             comboboxProps={{ withinPortal: true }}
-            data={genres.map((el: any) => el?.name)}
+            data={["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
             placeholder="From"
             label="Rating"
             classNames={classes}
@@ -63,13 +68,39 @@ export default function Movies({
           <Select
             mt="md"
             comboboxProps={{ withinPortal: true }}
-            data={genres.map((el: any) => el?.name)}
+            data={["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
             placeholder="To"
-            label="/"
+            label=" "
             classNames={classes}
           />
         </>
         <Button>Reset filtres</Button>
+
+        <Select
+          mt="md"
+          comboboxProps={{ withinPortal: true }}
+          data={[
+            {
+              label: "Most popular",
+              value: "popular",
+            },
+            {
+              label: "Top rated",
+              value: "top_rated",
+            },
+            {
+              label: "Upcoming",
+              value: "upcoming",
+            },
+          ]}
+          // placeholder="To"
+          defaultValue={"popular"}
+          label=" Sort BY"
+          onChange={(value) => {
+            setMovieList(value);
+          }}
+          classNames={classes}
+        />
       </div>
 
       <div className="CardSection">
@@ -83,35 +114,42 @@ export default function Movies({
           />
         ))}
       </div>
-      <div className="Movies_Pages">
-        <Button
-          isActive={page === "1"}
-          onClick={() => {
-            setPage("1");
-            get("1");
-          }}
-        >
-          1
-        </Button>
-        <Button
-          isActive={page === "2"}
-          onClick={() => {
-            setPage("2");
-            get("2");
-          }}
-        >
-          2
-        </Button>
-        <Button
-          isActive={page === "3"}
-          onClick={() => {
-            setPage("3");
-            get("3");
-          }}
-        >
-          3
-        </Button>
-      </div>
+      <Flex
+        mih={50}
+        bg="rgba(234, 235, 237, 1)"
+        gap="xs"
+        justify="flex-end"
+        align="flex-start"
+        direction="row"
+        wrap="wrap"
+      >
+        <Button.Group>
+          <Button
+            variant="default"
+            onClick={() => {
+              setPage(1);
+            }}
+          >
+            1
+          </Button>
+          <Button
+            variant="default"
+            onClick={() => {
+              setPage(2);
+            }}
+          >
+            2
+          </Button>
+          <Button
+            variant="default"
+            onClick={() => {
+              setPage(3);
+            }}
+          >
+            3
+          </Button>
+        </Button.Group>
+      </Flex>
     </div>
   );
 }
