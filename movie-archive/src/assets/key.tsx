@@ -1,8 +1,8 @@
-export const Url = `https://api.themoviedb.org/3/movie/`;
-//export const AltApi_k = `?api_key=${port}`;
-export const UrlIdMovie = `https://api.themoviedb.org/3/movie/`;
-export const UrlGenres =
-  "https://api.themoviedb.org/3/genre/movie/list?api_key=a3247e1d159fd499550d53f6ec5ef6d7";
-
+export const Api_k = `?api_key=${import.meta.env.VITE_TMDB_KEY}`;
+export const Url = `${import.meta.env.VITE_BASE_URL}movie/`;
+export const UrlIdMovie = `${import.meta.env.VITE_BASE_URL}/movie/`;
+export const UrlGenres = `${
+  import.meta.env.VITE_BASE_URL
+}genre/movie/list${Api_k}`;
 export const appendMovie = "&append_to_response=videos";
-// Url  SEARCH  ==>  https://api.themoviedb.org/3/search/movie
+// Url  SEARCH  ==>  `${import.meta.env.VITE_BASE_URL}/search/movie`

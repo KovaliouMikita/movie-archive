@@ -42,12 +42,7 @@ export default function App() {
   const [genres, setGenres] = useState<object[]>([]);
 
   function dataFetch(page: string, movieList: string) {
-    // fetch(Url + movieList + Api_k + `&page=${page}`)
-    fetch(
-      `${import.meta.env.VITE_BASE_URL}${movieList}?api_key=${
-        import.meta.env.VITE_TMDB_KEY
-      }&page=${page}`
-    )
+    fetch(`${Url}${movieList}${Api_k}&page=${page}`)
       .then((res) => res.json())
       .then((data) => {
         setDataMovies(data.results);
