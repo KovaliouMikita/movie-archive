@@ -7,7 +7,7 @@ import { Url, UrlGenres } from "./assets/key";
 import { useEffect, useState } from "react";
 import { useCallback } from "react";
 import BigMovieCard from "./Component/BigMovieCard";
-import { Loader } from "@mantine/core";
+// import { Loader } from "@mantine/core";
 
 export interface productionCompaniesProps {
   logo_path?: string;
@@ -88,9 +88,7 @@ export default function App() {
       {section === "BigMovieCard" && (
         <BigMovieCard idMovie={idMovie} setSection={setSection} />
       )}
-      <div className="LoaderWait">
-        <Loader size={70} />
-      </div>
+      <div className="LoaderWait">{/* <Loader size={70} /> */}</div>
     </div>
   );
 }
