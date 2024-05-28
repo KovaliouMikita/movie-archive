@@ -1,5 +1,5 @@
 export const Api_k = `?api_key=${import.meta.env.VITE_TMDB_KEY}`;
-export const Url = `${import.meta.env.VITE_BASE_URL}`;
+export const Url = `${import.meta.env.VITE_BASE_URL}movie/`;
 export const UrlIdMovie = `${import.meta.env.VITE_BASE_URL}/movie/`;
 export const UrlGenres = `${
   import.meta.env.VITE_BASE_URL

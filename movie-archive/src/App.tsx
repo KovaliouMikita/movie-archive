@@ -38,24 +38,11 @@ export default function App() {
   const [dataMovies, setDataMovies] = useState<dataProp[]>([]);
   const [page, setPage] = useState(1);
   const [idMovie, setIdMovie] = useState(0);
-  const [sortMovies, setSortMovies] = useState("popularity.desc");
-  const [sortByReleaseDate, setSortByReleaseDate] = useState("");
-  const [sortByGenres, setSortByGenres] = useState("");
-  const [sortByRatingFrom, setSortByRatingFrom] = useState("");
-  const [sortByRatingTo, setSortByRatingTo] = useState("");
+  const [movieList, setMovieList] = useState("popular");
   const [genres, setGenres] = useState<object[]>([]);
 
-  function dataFetch(
-    page: number,
-    sortMovies: string,
-    sortByReleaseDate: string,
-    sortByRatingFrom: string,
-    sortByRatingTo: string,
-    sortByGenres: string
-  ) {
-    fetch(
-      `${Url}discover/movie${Api_k}&page=${page}&sort_by=${sortMovies}${sortByReleaseDate}${sortByRatingFrom}${sortByRatingTo}${sortByGenres}`
-    )
+  function dataFetch(page: string, movieList: string) {
+    fetch(`${Url}${movieList}${Api_k}&page=${page}`)
       .then((res) => res.json())
       .then((data) => {
         setDataMovies(data.results);
@@ -69,50 +56,17 @@ export default function App() {
   }
 
   const getAllFetch = useCallback(
-    (
-      page: number,
-      sortMovies: string,
-      sortByReleaseDate: string,
-      sortByRatingFrom: string,
-      sortByRatingTo: string,
-      sortByGenres: string
-    ) => {
-      dataFetch(
-        page,
-        sortMovies,
-        sortByReleaseDate,
-        sortByRatingFrom,
-        sortByRatingTo,
-        sortByGenres
-      );
+    (page: any, movieList: string) => {
+      dataFetch(page, movieList);
       genresFetch().then((res) => setGenres(res));
     },
-    [
-      page,
-      sortMovies,
-      sortByReleaseDate,
-      sortByRatingFrom,
-      sortByRatingTo,
-      sortByGenres,
-    ]
+    [genres, dataMovies]
   );
   useEffect(() => {
-    getAllFetch(
-      page,
-      sortMovies,
-      sortByReleaseDate,
-      sortByRatingFrom,
-      sortByRatingTo,
-      sortByGenres
-    );
-  }, [
-    page,
-    sortMovies,
-    sortByReleaseDate,
-    sortByRatingFrom,
-    sortByRatingTo,
-    sortByGenres,
-  ]);
+    //dataFetch(page);
+    //fetchGenres().then((res) => setGenres(res));
+    getAllFetch(page, movieList);
+  }, [page, movieList]);
 
   return (
     <div className="App">
@@ -120,13 +74,9 @@ export default function App() {
       {section === "Movies" && (
         <>
           <Movies
+            setMovieList={setMovieList}
             setPage={setPage}
             setSection={setSection}
-            setSortMovies={setSortMovies}
-            setSortByRatingFrom={setSortByRatingFrom}
-            setSortByRatingTo={setSortByRatingTo}
-            setSortByReleaseDate={setSortByReleaseDate}
-            setSortByGenres={setSortByGenres}
             dataMovies={dataMovies}
             genres={genres}
             setIdMovie={setIdMovie}
