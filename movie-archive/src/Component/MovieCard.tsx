@@ -1,13 +1,6 @@
-import { dataProp } from "../App";
 import { IconStar } from "@tabler/icons-react";
 import { ActionIcon, rem } from "@mantine/core";
-
-interface MovieCardProps {
-  dataMovie: dataProp;
-  setSection: (_arg0: string) => void;
-  setIdMovie: Function;
-  genres: object[];
-}
+import { MovieCardProps } from "./Interfaces";
 
 export default function MovieCard({
   dataMovie,

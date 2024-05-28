@@ -1,8 +1,4 @@
-interface ButtonProps {
-  children: any;
-  onClick?: () => void | string | boolean;
-  isActive?: boolean;
-}
+import { ButtonProps } from "./Interfaces";
 
 export default function Button({ children, onClick, isActive }: ButtonProps) {
   return (

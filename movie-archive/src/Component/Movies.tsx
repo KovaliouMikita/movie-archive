@@ -1,22 +1,9 @@
 import MovieCard from "./MovieCard";
-import { dataProp } from "../App";
 import { Flex, Select } from "@mantine/core";
 import classes from "./Css/ContainedInput.module.css";
 import { Button } from "@mantine/core";
 import { useCallback } from "react";
-
-interface MoviesProps {
-  dataMovies: dataProp[];
-  setSection: (arg0: string) => void;
-  setPage: (arg0: number) => void;
-  setSortMovies: (arg0: string) => void;
-  setSortByRatingFrom: (arg0: string) => void;
-  setSortByRatingTo: (arg0: string) => void;
-  setSortByReleaseDate: (arg0: string) => void;
-  setSortByGenres: (arg0: string) => void;
-  setIdMovie: Function;
-  genres: object[];
-}
+import { MoviesProps, dataProp, genresProp } from "./Interfaces";
 
 export default function Movies({
   dataMovies,
@@ -30,6 +17,7 @@ export default function Movies({
   setSortByRatingTo,
   setSortByGenres,
 }: MoviesProps) {
+  console.log(genres);
   const getDataRange = useCallback(() => {
     let date = new Date();
     function createYears(label: number, value: number) {
@@ -45,6 +33,21 @@ export default function Movies({
     return Array;
   }, []);
 
+  const getGenresRange = useCallback((genres: genresProp[]) => {
+    function createGenres(genres: genresProp[], i: any) {
+      return {
+        label: `${genres[i].name}`,
+        value: `${genres[i].id}`,
+      };
+    }
+    let Array = [];
+    for (let i = 0; i < genres.length; i++) {
+      Array.push(createGenres(genres, i));
+    }
+    return Array;
+    console.log(Array);
+  }, []);
+
   const getRateRange = useCallback(() => {
     function createRate(label: number, value: number) {
       return {
@@ -58,7 +61,7 @@ export default function Movies({
     }
     return Array;
   }, []);
-  console.log(setSortByGenres);
+
   return (
     <div className="MainSection">
       <div className="Header">
@@ -69,10 +72,13 @@ export default function Movies({
           <Select
             mt="md"
             comboboxProps={{ withinPortal: true }}
-            data={genres.map((el: any) => el?.name)}
+            data={getGenresRange(genres)}
             placeholder="Select genre"
             label="Genres"
             classNames={classes}
+            onChange={(value) => {
+              setSortByGenres(`&with_genres=${value}`);
+            }}
           />
         </>
         <>
@@ -120,6 +126,7 @@ export default function Movies({
             setSortByReleaseDate("");
             setSortByRatingFrom("");
             setSortByRatingTo("");
+            setSortByGenres("");
           }}
         >
           Reset filtres
@@ -196,6 +203,3 @@ export default function Movies({
     </div>
   );
 }
-
-//      &sort_by=vote_count.desc&vote_average.gte=4
-//       sort_by=vote_count.asc&vote_average.gte=4 \

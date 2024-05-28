@@ -1,14 +1,14 @@
 import { useCallback, useEffect, useState } from "react";
 import { Api_k, UrlIdMovie, appendMovie } from "../assets/key";
 import { IconStar } from "@tabler/icons-react";
-import { dataProp, genresProps, productionCompaniesProps } from "../App";
 import { useDisclosure } from "@mantine/hooks";
 import { Modal, ActionIcon, rem, Button } from "@mantine/core";
-
-interface BigMovieCardProps {
-  idMovie: number;
-  setSection: Function;
-}
+import {
+  BigMovieCardProps,
+  dataProp,
+  genresProps,
+  productionCompaniesProps,
+} from "./Interfaces";
 
 export default function BigMovieCard({
   idMovie,

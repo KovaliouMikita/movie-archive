@@ -1,9 +1,7 @@
 import { useState } from "react";
 import Button from "./Button";
+import { SideBarProps } from "./Interfaces";
 
-interface SideBarProps {
-  Change: (arg0: string) => void;
-}
 export default function SideBar({ Change }: SideBarProps) {
   const [active, SetActive] = useState("1");
 

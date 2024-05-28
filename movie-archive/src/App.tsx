@@ -7,31 +7,8 @@ import { useEffect, useState } from "react";
 import { useCallback } from "react";
 import BigMovieCard from "./Component/BigMovieCard";
 import Movies from "./Component/Movies";
+import { dataProp } from "./Component/Interfaces";
 //import { Group, Loader } from "@mantine/core";
-
-export interface productionCompaniesProps {
-  logo_path?: string;
-  name?: string;
-}
-export interface genresProps {
-  name?: string;
-  id?: number;
-}
-export interface dataProp {
-  poster_path?: string;
-  title: string;
-  id: number;
-  release_date: string;
-  vote_average: number;
-  vote_count: number;
-  genre_ids: number[];
-  runtime?: number;
-  budget?: number;
-  revenue?: number;
-  genres?: genresProps[];
-  overview: string;
-  production_companies: productionCompaniesProps[];
-}
 
 export default function App() {
   const [section, setSection] = useState("Movies");
