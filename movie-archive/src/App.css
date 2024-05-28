@@ -110,14 +110,14 @@ a:hover {
   gap: 20px;
   justify-content: space-between;
 }
-.TralerBlock {
+.TrailerBlock {
   width: 500px;
   height: 317px;
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
-.TralerBlock iframe {
+.TrailerBlock iframe {
   width: 500px;
   height: 281px;
   border-radius: 9px;
