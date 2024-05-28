@@ -101,8 +101,8 @@ export default function BigMovieCard({
           </ActionIcon>
         </div>
         <div className="More_Detales">
-          <div className="TrailerBlock">
-            <p className="Bold20">Trailer</p>
+          <div className="TralerBlock">
+            <p className="Bold20">Traler</p>
             <iframe
               src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=1I2E1mAYNqOiw660"
               title="YouTube video player"
