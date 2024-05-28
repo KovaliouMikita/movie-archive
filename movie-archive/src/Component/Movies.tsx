@@ -3,14 +3,19 @@ import { dataProp } from "../App";
 import { Flex, Select } from "@mantine/core";
 import classes from "./Css/ContainedInput.module.css";
 import { Button } from "@mantine/core";
+import { useCallback } from "react";
 
 interface MoviesProps {
   dataMovies: dataProp[];
   setSection: (arg0: string) => void;
   setPage: (arg0: number) => void;
+  setSortMovies: (arg0: string) => void;
+  setSortByRatingFrom: (arg0: string) => void;
+  setSortByRatingTo: (arg0: string) => void;
+  setSortByReleaseDate: (arg0: string) => void;
+  setSortByGenres: (arg0: string) => void;
   setIdMovie: Function;
   genres: object[];
-  setMovieList: Function;
 }
 
 export default function Movies({
@@ -19,15 +24,41 @@ export default function Movies({
   setPage,
   genres,
   setIdMovie,
-  setMovieList,
+  setSortMovies,
+  setSortByReleaseDate,
+  setSortByRatingFrom,
+  setSortByRatingTo,
+  setSortByGenres,
 }: MoviesProps) {
-  function getDataRange() {
+  const getDataRange = useCallback(() => {
+    let date = new Date();
+    function createYears(label: number, value: number) {
+      return {
+        label: `${label}`,
+        value: `${value}`,
+      };
+    }
     let Array = [];
-    for (let i = 1922; i < 2024; i++) {
-      Array.push(`${i}`);
+    for (let i = date.getFullYear(); i > 1922; i--) {
+      Array.push(createYears(i, i));
     }
     return Array;
-  }
+  }, []);
+
+  const getRateRange = useCallback(() => {
+    function createRate(label: number, value: number) {
+      return {
+        label: `${label}`,
+        value: `${value}`,
+      };
+    }
+    let Array = [];
+    for (let i = 1; i < 11; i++) {
+      Array.push(createRate(i, i));
+    }
+    return Array;
+  }, []);
+  console.log(setSortByGenres);
   return (
     <div className="MainSection">
       <div className="Header">
@@ -52,52 +83,64 @@ export default function Movies({
             placeholder="Select release year"
             label="Release year"
             classNames={classes}
+            onChange={(value) => {
+              setSortByReleaseDate(`&primary_release_year=${value}`);
+            }}
           />
         </>
         <>
           <Select
             mt="md"
             comboboxProps={{ withinPortal: true }}
-            data={["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
+            data={getRateRange()}
             placeholder="From"
             label="Rating"
             classNames={classes}
+            onChange={(value) => {
+              setSortByRatingFrom(`&vote_average.gte=${value}`);
+            }}
           />
         </>
         <>
           <Select
             mt="md"
             comboboxProps={{ withinPortal: true }}
-            data={["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
+            data={getRateRange()}
             placeholder="To"
             label=" "
             classNames={classes}
+            onChange={(value) => {
+              setSortByRatingTo(`&vote_average.lte=${value}`);
+            }}
           />
         </>
-        <Button>Reset filtres</Button>
+        <Button
+          onClick={() => {
+            setSortMovies("popularity.desc");
+            setSortByReleaseDate("");
+            setSortByRatingFrom("");
+            setSortByRatingTo("");
+          }}
+        >
+          Reset filtres
+        </Button>
 
         <Select
           mt="md"
           comboboxProps={{ withinPortal: true }}
           data={[
-            {
-              label: "Most popular",
-              value: "popular",
-            },
-            {
-              label: "Top rated",
-              value: "top_rated",
-            },
-            {
-              label: "Upcoming",
-              value: "upcoming",
-            },
+            { label: "Most popular", value: "popularity.desc" },
+            { label: "Least popular", value: "popularity.asc" },
+            { label: "Most rated", value: "vote_average.desc" },
+            { label: "Least rated", value: "vote_average.asc" },
+            { label: "Most voted", value: "vote_count.desc" },
+            { label: "Least voted", value: "vote_count.asc" },
           ]}
           // placeholder="To"
-          defaultValue={"popular"}
+          defaultValue={"popularity.desc"}
           label=" Sort BY"
           onChange={(value) => {
-            setMovieList(value);
+            setSortMovies(`${value}`);
           }}
           classNames={classes}
         />
@@ -153,3 +196,6 @@ export default function Movies({
     </div>
   );
 }
+
+//      &sort_by=vote_count.desc&vote_average.gte=4
+//       sort_by=vote_count.asc&vote_average.gte=4 \

@@ -32,7 +32,7 @@ export default function BigMovieCard({
   useEffect(() => {
     getMovieById(idMovie);
   }, [idMovie]);
-  console.log(dataMovie);
+
   return (
     <>
       <Modal opened={opened} onClose={close} title="Your rating" centered>
