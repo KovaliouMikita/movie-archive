@@ -1,14 +1,17 @@
 import "@mantine/core/styles.css";
 import "./App.css";
-import Rate from "./Component/Rate";
-import SideBar from "./Component/SideBar";
+
 import { Api_k, Url, UrlGenres } from "./assets/key";
 import { useEffect, useState } from "react";
 import { useCallback } from "react";
+import { Genre, dataProp } from "./Component/Interfaces";
+//import { Group, Loader } from "@mantine/core";
+
+import Rate from "./Component/Rate";
+import SideBar from "./Component/SideBar";
 import BigMovieCard from "./Component/BigMovieCard";
 import Movies from "./Component/Movies";
-import { dataProp } from "./Component/Interfaces";
-//import { Group, Loader } from "@mantine/core";
+// import Component
 
 export default function App() {
   const [section, setSection] = useState("Movies");
@@ -20,7 +23,7 @@ export default function App() {
   const [sortByGenres, setSortByGenres] = useState("");
   const [sortByRatingFrom, setSortByRatingFrom] = useState("");
   const [sortByRatingTo, setSortByRatingTo] = useState("");
-  const [genres, setGenres] = useState<object[]>([]);
+  const [genres, setGenres] = useState<Genre[]>([]);
 
   function dataFetch(
     page: number,
@@ -30,9 +33,7 @@ export default function App() {
     sortByRatingTo: string,
     sortByGenres: string
   ) {
-    fetch(
-      `${Url}discover/movie${Api_k}&page=${page}&sort_by=${sortMovies}${sortByReleaseDate}${sortByRatingFrom}${sortByRatingTo}${sortByGenres}`
-    )
+    fetch(`${Url}discover/movie${Api_k}&page=${page}&sort_by=${sortMovies}${sortByReleaseDate}${sortByRatingFrom}${sortByRatingTo}${sortByGenres}`)
       .then((res) => res.json())
       .then((data) => {
         setDataMovies(data.results);
@@ -46,50 +47,15 @@ export default function App() {
   }
 
   const getAllFetch = useCallback(
-    (
-      page: number,
-      sortMovies: string,
-      sortByReleaseDate: string,
-      sortByRatingFrom: string,
-      sortByRatingTo: string,
-      sortByGenres: string
-    ) => {
-      dataFetch(
-        page,
-        sortMovies,
-        sortByReleaseDate,
-        sortByRatingFrom,
-        sortByRatingTo,
-        sortByGenres
-      );
+    (page: number, sortMovies: string, sortByReleaseDate: string, sortByRatingFrom: string, sortByRatingTo: string, sortByGenres: string) => {
+      dataFetch(page, sortMovies, sortByReleaseDate, sortByRatingFrom, sortByRatingTo, sortByGenres);
       genresFetch().then((res) => setGenres(res));
     },
-    [
-      page,
-      sortMovies,
-      sortByReleaseDate,
-      sortByRatingFrom,
-      sortByRatingTo,
-      sortByGenres,
-    ]
+    []
   );
   useEffect(() => {
-    getAllFetch(
-      page,
-      sortMovies,
-      sortByReleaseDate,
-      sortByRatingFrom,
-      sortByRatingTo,
-      sortByGenres
-    );
-  }, [
-    page,
-    sortMovies,
-    sortByReleaseDate,
-    sortByRatingFrom,
-    sortByRatingTo,
-    sortByGenres,
-  ]);
+    getAllFetch(page, sortMovies, sortByReleaseDate, sortByRatingFrom, sortByRatingTo, sortByGenres);
+  }, [page, sortMovies, sortByReleaseDate, sortByRatingFrom, sortByRatingTo, sortByGenres, getAllFetch]);
 
   return (
     <div className="App">
@@ -111,9 +77,7 @@ export default function App() {
         </>
       )}
       {section === "Rate" && <Rate></Rate>}
-      {section === "BigMovieCard" && (
-        <BigMovieCard idMovie={idMovie} setSection={setSection} />
-      )}
+      {section === "BigMovieCard" && <BigMovieCard idMovie={idMovie} setSection={setSection} />}
       {/* <div className="LoaderWait">
         <Group justify="center" align="center">
           <Loader size={70} />{" "}

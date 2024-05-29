@@ -1,38 +1,27 @@
-export interface MoviesProps {
-  dataMovies: dataProp[];
-  setSection: (arg0: string) => void;
-  setPage: (arg0: number) => void;
-  setSortMovies: (arg0: string) => void;
-  setSortByRatingFrom: (arg0: string) => void;
-  setSortByRatingTo: (arg0: string) => void;
-  setSortByReleaseDate: (arg0: string) => void;
-  setSortByGenres: (arg0: string) => void;
-  setIdMovie: Function;
-  genres: object[];
-}
+import { ReactElement } from "react";
 
 export interface BigMovieCardProps {
   idMovie: number;
-  setSection: Function;
+  setSection: (section: string) => void;
 }
 
-export interface genresProp {
+export interface Genre {
   name?: string;
-  id?: number;
+  id: number;
 }
 
 export interface MovieCardProps {
   dataMovie: dataProp;
-  setSection: (_arg0: string) => void;
-  setIdMovie: Function;
-  genres: object[];
+  setSection: (section: string) => void;
+  setIdMovie: (idMovie: number) => void;
+  genres: Genre[];
 }
 
 export interface productionCompaniesProps {
   logo_path?: string;
   name?: string;
 }
-export interface genresProps {
+export interface Genres {
   name?: string;
   id?: number;
 }
@@ -47,13 +36,13 @@ export interface dataProp {
   runtime?: number;
   budget?: number;
   revenue?: number;
-  genres?: genresProps[];
+  genres?: Genres[];
   overview: string;
   production_companies: productionCompaniesProps[];
 }
 
 export interface ButtonProps {
-  children: any;
+  children: ReactElement | string;
   onClick?: () => void | string | boolean;
   isActive?: boolean;
 }

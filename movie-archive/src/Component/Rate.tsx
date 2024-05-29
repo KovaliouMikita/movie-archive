@@ -9,20 +9,9 @@ export default function Rate() {
         <div className="Header">
           <Group justify="space-between" align="center">
             <Title className={classes.title}>Rated Movies</Title>
-            <Input
-              placeholder="Search movie title"
-              leftSection={<IconSearch size={16} />}
-            />
+            <Input placeholder="Search movie title" leftSection={<IconSearch size={16} />} />
           </Group>
-          <Flex
-            mih={50}
-            bg="rgba(234, 235, 237, 1)"
-            gap="xs"
-            justify="center"
-            align="flex-start"
-            direction="row"
-            wrap="wrap"
-          >
+          <Flex mih={50} bg="rgba(234, 235, 237, 1)" gap="xs" justify="center" align="flex-start" direction="row" wrap="wrap">
             <Button.Group>
               <Button variant="default" onClick={() => {}}>
                 1

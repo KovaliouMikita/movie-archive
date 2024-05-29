@@ -2,8 +2,7 @@
   width: 1920px;
   height: 3000px;
   background: #eaebed;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 p {
   margin: 0px;
@@ -186,11 +185,13 @@ button.Button.active {
 .DropdownMenu {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-size: 22px;
   width: 980px;
   height: 72px;
   gap: 8px;
 }
+
 .CardSection {
   background: #eaebed;
   display: grid;

@@ -6,7 +6,7 @@ import { Modal, ActionIcon, rem, Button } from "@mantine/core";
 import {
   BigMovieCardProps,
   dataProp,
-  genresProps,
+  Genres,
   productionCompaniesProps,
 } from "./Interfaces";
 
@@ -84,7 +84,7 @@ export default function BigMovieCard({
               </div>
               <div className="Flex">
                 <p className="Grey16">Genres</p>
-                {dataMovie?.genres?.map((i: genresProps) => (
+                {dataMovie?.genres?.map((i: Genres) => (
                   <p key={i.id}> {i.name}</p>
                 ))}
               </div>

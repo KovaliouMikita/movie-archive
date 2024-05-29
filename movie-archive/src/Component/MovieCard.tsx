@@ -1,13 +1,8 @@
 import { IconStar } from "@tabler/icons-react";
 import { ActionIcon, rem } from "@mantine/core";
-import { MovieCardProps } from "./Interfaces";
+import { Genre, MovieCardProps } from "./Interfaces";
 
-export default function MovieCard({
-  dataMovie,
-  setSection,
-  genres,
-  setIdMovie,
-}: MovieCardProps) {
+export default function MovieCard({ dataMovie, setSection, genres, setIdMovie }: MovieCardProps) {
   return (
     <>
       <div className="MovieCard">
@@ -25,14 +20,13 @@ export default function MovieCard({
           <p className="Grey16">{dataMovie.release_date.slice(0, 4)}</p>
           <div className="RateBlock">
             <IconStar size={18} />
-            <p>{dataMovie.vote_average}</p>{" "}
-            <p className="Grey16">({dataMovie.vote_count})</p>
+            <p>{dataMovie.vote_average}</p> <p className="Grey16">({dataMovie.vote_count})</p>
           </div>
           <div className="MovieCard_Genres">
             <p className="Grey16">Genres</p>
             {dataMovie?.genre_ids.map((i: number) => (
               <p key={i}>
-                {genres.map((el: any) => {
+                {genres.map((el: Genre) => {
                   return el.id === i ? el.name : "";
                 })}
               </p>

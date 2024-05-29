@@ -4,11 +4,22 @@
 
 .input {
   height: 42px;
-  padding-top: rem(18px);
   border-radius: 8px;
   font-size: 14px;
 }
+.input:hover {
+  background-color: #f2ebf9;
+}
 
+.option:active {
+  color: white;
+  background-color: #9854f6;
+}
+
+.dropdown {
+  display: block;
+  height: 188px;
+}
 .label {
   /* position: absolute; */
   pointer-events: none;
@@ -16,4 +27,7 @@
   padding-left: var(--mantine-spacing-sm);
   padding-top: calc(var(--mantine-spacing-sm) / 2);
   z-index: 1;
+}
+.button {
+  align-items: center;
 }
