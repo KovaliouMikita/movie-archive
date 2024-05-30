@@ -4,11 +4,11 @@ import { Genre, MovieCardProps } from "./Interfaces";
 import { useCallback } from "react";
 
 export default function MovieCard({ dataMovie, setSection, genres, setIdMovie }: MovieCardProps) {
-  const getImgIcon = useCallback((path: string | undefined) => {
+  const getImgIcon = useCallback((path: string | undefined, altImg: string) => {
     if (path != null) {
       return `https://image.tmdb.org/t/p/w500${path}`;
     } else {
-      return "/src/assets/notImg.png";
+      return altImg;
     }
   }, []);
   return (
@@ -19,7 +19,7 @@ export default function MovieCard({ dataMovie, setSection, genres, setIdMovie }:
             setSection("BigMovieCard");
             setIdMovie(dataMovie.id);
           }}
-          src={getImgIcon(dataMovie.poster_path)}
+          src={getImgIcon(dataMovie.poster_path, "/src/assets/notImg.png")}
           alt="not IMG"
         />
 

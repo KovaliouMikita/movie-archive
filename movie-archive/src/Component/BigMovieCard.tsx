@@ -9,11 +9,11 @@ export default function BigMovieCard({ idMovie, setSection }: BigMovieCardProps)
   const [dataMovie, setDataMovie] = useState<dataProp>();
   const [opened, { open, close }] = useDisclosure(false);
 
-  const getImgIcon = useCallback((path: string | undefined) => {
+  const getImgIcon = useCallback((path: string | undefined, altImg: string) => {
     if (path != null) {
       return `https://image.tmdb.org/t/p/w500${path}`;
     } else {
-      return "/src/assets/notImg.png";
+      return altImg;
     }
   }, []);
 
@@ -46,7 +46,7 @@ export default function BigMovieCard({ idMovie, setSection }: BigMovieCardProps)
         </div>
 
         <div className="BigMovieCard_Contener">
-          <img src={getImgIcon(dataMovie?.poster_path)} alt="not IMG" />
+          <img src={getImgIcon(dataMovie?.poster_path, "/src/assets/notImg.png")} alt="not IMG" />
           <div className="BigMovieCard_Contener_Discription">
             <div>
               <p className="TitleName">{dataMovie?.title}</p>
@@ -54,7 +54,7 @@ export default function BigMovieCard({ idMovie, setSection }: BigMovieCardProps)
             </div>
 
             <div className="RateBlock">
-              <IconStar />
+              <IconStar fill="true" color="#FAB005" />
               <p>{dataMovie?.vote_average}</p> <p className="Grey16">({dataMovie?.vote_count})</p>
             </div>
 
@@ -98,7 +98,7 @@ export default function BigMovieCard({ idMovie, setSection }: BigMovieCardProps)
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               // referrerpolicy="strict-origin-when-cross-origin"
               // allowfullscreen
-            ></iframe>
+            ></iframe>{" "}
           </div>
           <hr></hr>
           <div className="DiscriptionBlock">
@@ -111,7 +111,8 @@ export default function BigMovieCard({ idMovie, setSection }: BigMovieCardProps)
 
             {dataMovie?.production_companies.map((i: productionCompaniesProps) => (
               <div key={i.name} className="ProductionBlock_Companies">
-                <img src={`https://image.tmdb.org/t/p/w500/${i?.logo_path}`}></img>
+                {/* <img src={`https://image.tmdb.org/t/p/w500/${i?.logo_path}`}></img> */}
+                <img src={getImgIcon(i?.logo_path, "/src/assets/ClaperBoard.png")}></img>
                 <p className="Bold16">{i.name}</p>
               </div>
             ))}

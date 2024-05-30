@@ -25,6 +25,3 @@
   padding-top: calc(var(--mantine-spacing-sm) / 2);
   z-index: 1;
 }
-.button {
-  align-items: flex-end;
-}

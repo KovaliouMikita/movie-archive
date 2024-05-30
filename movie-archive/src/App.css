@@ -59,7 +59,7 @@ a:hover {
   height: 2660px;
   top: 40px;
   left: 460px;
-  gap: 40px;
+  gap: 20px;
   opacity: 1;
 }
 .BigMoviesCard_link {
@@ -111,7 +111,7 @@ a:hover {
 }
 .TrailerBlock {
   width: 500px;
-  height: 317px;
+
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -126,7 +126,6 @@ a:hover {
   flex-direction: column;
   gap: 16px;
   width: 725px;
-  height: 102px;
 }
 .ProductionBlock {
   display: flex;
@@ -275,9 +274,8 @@ button.Button.active {
 }
 hr {
   width: 752px;
-  height: 1px;
-  color: black;
-  background: #d5d6dc;
+  background-color: #d5d6dc;
+  color: #d5d6dc;
 }
 
 .BigMovieCard_Contener Button {
