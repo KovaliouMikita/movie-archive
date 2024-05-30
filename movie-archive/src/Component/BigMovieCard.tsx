@@ -17,19 +17,16 @@ export default function BigMovieCard({ idMovie, setSection }: BigMovieCardProps)
     }
   }, []);
 
-  function dataFetch(id: number) {
-    fetch(UrlIdMovie + id + Api_k + appendMovie)
+  const getMovieById = useCallback((idMovie: number) => {
+    fetch(UrlIdMovie + idMovie + Api_k + appendMovie)
       .then((res) => res.json())
       .then((data) => setDataMovie(data));
-  }
-
-  const getMovieById = useCallback((idMovie: number) => {
-    dataFetch(idMovie);
   }, []);
+
   useEffect(() => {
     getMovieById(idMovie);
   }, [getMovieById, idMovie]);
-
+  console.log(dataMovie);
   return (
     <>
       <Modal opened={opened} onClose={close} title="Your rating" centered>
@@ -92,7 +89,8 @@ export default function BigMovieCard({ idMovie, setSection }: BigMovieCardProps)
           <div className="TrailerBlock">
             <p className="Bold20">Trailer</p>
             <iframe
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=1I2E1mAYNqOiw660"
+              // src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=1I2E1mAYNqOiw660"
+              src={`https://www.youtube.com/embed/${dataMovie?.videos?.results[0].key}`}
               title="YouTube video player"
               frameBorder="1"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

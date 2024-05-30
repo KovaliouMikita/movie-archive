@@ -38,7 +38,11 @@ export interface dataProp {
   revenue?: number;
   genres?: Genres[];
   overview: string;
+  videos: videosProp;
   production_companies: productionCompaniesProps[];
+}
+interface videosProp {
+  results: { key: string }[];
 }
 
 export interface ButtonProps {
