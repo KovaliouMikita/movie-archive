@@ -4,6 +4,7 @@ import { IconStar } from "@tabler/icons-react";
 import { useDisclosure } from "@mantine/hooks";
 import { Modal, ActionIcon, rem, Button } from "@mantine/core";
 import { BigMovieCardProps, dataProp, Genres, productionCompaniesProps } from "./Interfaces";
+import { NoPoster } from "./svgComponents";
 
 export default function BigMovieCard({ idMovie, setSection }: BigMovieCardProps) {
   const [dataMovie, setDataMovie] = useState<dataProp>();
@@ -43,7 +44,15 @@ export default function BigMovieCard({ idMovie, setSection }: BigMovieCardProps)
         </div>
 
         <div className="BigMovieCard_Contener">
-          <img src={getImgIcon(dataMovie?.poster_path, "/src/assets/notImg.png")} alt="not IMG" />
+          <div className="ImgContent">
+            {dataMovie?.poster_path !== null && <img src={`https://image.tmdb.org/t/p/w500${dataMovie?.poster_path}`}></img>}
+            {dataMovie?.poster_path == null && (
+              <>
+                <NoPoster />
+                No poster
+              </>
+            )}
+          </div>
           <div className="BigMovieCard_Contener_Discription">
             <div>
               <p className="TitleName">{dataMovie?.title}</p>
@@ -90,7 +99,7 @@ export default function BigMovieCard({ idMovie, setSection }: BigMovieCardProps)
             <p className="Bold20">Trailer</p>
             <iframe
               // src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=1I2E1mAYNqOiw660"
-              src={`https://www.youtube.com/embed/${dataMovie?.videos?.results[0].key}`}
+              src={`https://www.youtube.com/embed/${dataMovie?.videos?.results[0]?.key}`}
               title="YouTube video player"
               frameBorder="1"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

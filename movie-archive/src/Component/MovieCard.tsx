@@ -1,32 +1,33 @@
 import { IconStar } from "@tabler/icons-react";
 import { ActionIcon, rem } from "@mantine/core";
 import { Genre, MovieCardProps } from "./Interfaces";
-import { useCallback } from "react";
+import { NoPoster } from "./svgComponents";
 
 export default function MovieCard({ dataMovie, setSection, genres, setIdMovie }: MovieCardProps) {
-  const getImgIcon = useCallback((path: string | undefined, altImg: string) => {
-    if (path != null) {
-      return `https://image.tmdb.org/t/p/w500${path}`;
-    } else {
-      return altImg;
-    }
-  }, []);
   return (
     <>
       <div className="MovieCard">
-        <img
+        <div
+          className="MovieCardImg"
           onClick={() => {
             setSection("BigMovieCard");
             setIdMovie(dataMovie.id);
           }}
-          src={getImgIcon(dataMovie.poster_path, "/src/assets/notImg.png")}
-          alt="not IMG"
-        />
+        >
+          {dataMovie?.poster_path !== null && <img src={`https://image.tmdb.org/t/p/w500${dataMovie?.poster_path}`}></img>}
+          {dataMovie?.poster_path == null && (
+            <>
+              {" "}
+              <NoPoster />
+              No poster
+            </>
+          )}
+        </div>
 
         <div className="CardRow">
           <p className="TitleName">{dataMovie.title}</p>
 
-          <p className="Grey16">{dataMovie.release_date.slice(0, 4)}</p>
+          <p className="Grey16">{dataMovie.release_date?.slice(0, 4)}</p>
           <div className="RateBlock">
             <IconStar size={18} />
             <p>{dataMovie.vote_average}</p> <p className="Grey16">({dataMovie.vote_count})</p>
