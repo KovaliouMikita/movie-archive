@@ -191,6 +191,10 @@ button.Button.active {
   height: 72px;
   gap: 8px;
 }
+.DropdownMenu button {
+  display: flex;
+  justify-content: flex-end;
+}
 
 .CardSection {
   background: #eaebed;
@@ -281,4 +285,8 @@ hr {
   justify-content: center;
   width: 28px;
   height: 28px;
+}
+.flex-end {
+  display: flex;
+  justify-content: flex-end;
 }

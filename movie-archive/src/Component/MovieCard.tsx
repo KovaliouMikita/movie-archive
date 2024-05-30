@@ -1,8 +1,16 @@
 import { IconStar } from "@tabler/icons-react";
 import { ActionIcon, rem } from "@mantine/core";
 import { Genre, MovieCardProps } from "./Interfaces";
+import { useCallback } from "react";
 
 export default function MovieCard({ dataMovie, setSection, genres, setIdMovie }: MovieCardProps) {
+  const getImgIcon = useCallback((path: string | undefined) => {
+    if (path != null) {
+      return `https://image.tmdb.org/t/p/w500${path}`;
+    } else {
+      return "/src/assets/notImg.png";
+    }
+  }, []);
   return (
     <>
       <div className="MovieCard">
@@ -11,9 +19,10 @@ export default function MovieCard({ dataMovie, setSection, genres, setIdMovie }:
             setSection("BigMovieCard");
             setIdMovie(dataMovie.id);
           }}
-          src={`https://image.tmdb.org/t/p/w500${dataMovie.poster_path}`}
+          src={getImgIcon(dataMovie.poster_path)}
           alt="not IMG"
         />
+
         <div className="CardRow">
           <p className="TitleName">{dataMovie.title}</p>
 

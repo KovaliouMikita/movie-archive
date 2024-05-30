@@ -1,5 +1,5 @@
 import MovieCard from "./MovieCard";
-import { Flex, Select, ComboboxData } from "@mantine/core";
+import { Flex, Select, ComboboxData, MultiSelect } from "@mantine/core";
 import classes from "./Css/ContainedInput.module.css";
 import { Button } from "@mantine/core";
 import { useCallback, useMemo, useState } from "react";
@@ -30,12 +30,12 @@ export default function Movies({
   setSortByRatingTo,
   setSortByGenres,
 }: Props) {
-  const [selectedGenreId, setSelectedGenreId] = useState<string | null>(null);
+  const [selectedGenreId, setSelectedGenreId] = useState<string[] | undefined>(undefined);
   const [selectedYearId, setSelectedYearId] = useState<string | null>(null);
   const [selectedRateFrom, setSelectedRateFrom] = useState<string | null>(null);
-  // const [selectedRateToId, setSelectedRateToId] = useState<string | null>(null);
+  const [selectedRateToId, setSelectedRateToId] = useState<string | null>(null);
 
-  const getDataRange = useMemo(() => {
+  const getDateRange = useMemo(() => {
     const date = new Date();
     function createYears(label: number, value: number) {
       return {
@@ -72,7 +72,7 @@ export default function Movies({
   }, [genres]);
 
   const onGenreChange = useCallback(
-    (value: string | null) => {
+    (value: string[] | undefined) => {
       setSelectedGenreId(value);
       if (value != null) {
         setSortByGenres(`&with_genres=${value}`);
@@ -90,12 +90,13 @@ export default function Movies({
       </div>
       <div className="DropdownMenu">
         <>
-          <Select
+          <MultiSelect
             mt="md"
             comboboxProps={{ withinPortal: true }}
             value={selectedGenreId}
             data={genreOptions}
-            placeholder="Select genre"
+            maxDropdownHeight="188px"
+            placeholder={"Select genres"}
             label="Genres"
             classNames={classes}
             clearable
@@ -106,7 +107,8 @@ export default function Movies({
           <Select
             mt="md"
             comboboxProps={{ withinPortal: true }}
-            data={getDataRange}
+            data={getDateRange}
+            maxDropdownHeight="188px"
             placeholder="Select release year"
             label="Release year"
             value={selectedYearId}
@@ -115,8 +117,10 @@ export default function Movies({
               if (value != null) {
                 setSelectedYearId(value);
                 setSortByReleaseDate(`&primary_release_year=${value}`);
-              } else setSortByReleaseDate(``);
-              setSelectedYearId(value);
+              } else {
+                setSortByReleaseDate(``);
+                setSelectedYearId(null);
+              }
             }}
           />
         </>
@@ -127,17 +131,17 @@ export default function Movies({
             data={getRateRange}
             placeholder="From"
             label="Rating"
+            maxDropdownHeight="188px"
             value={selectedRateFrom}
             classNames={classes}
-            onChange={(value, data) => {
-              if (data.value != null) {
-                setSelectedRateFrom(data.value);
+            onChange={(value) => {
+              if (value != null) {
+                setSelectedRateFrom(value);
                 setSortByRatingFrom(`&vote_average.gte=${value}`);
-                console.log(data);
-                console.log(value);
-                console.log(selectedRateFrom);
-              } else setSortByRatingFrom(``);
-              setSelectedRateFrom(null);
+              } else {
+                setSortByRatingFrom(``);
+                setSelectedRateFrom(null);
+              }
             }}
           />
         </>
@@ -148,54 +152,60 @@ export default function Movies({
             data={getRateRange}
             placeholder="To"
             label=" "
-            // value={selectedRateToId}
+            maxDropdownHeight="188px"
+            value={selectedRateToId}
             classNames={classes}
             onChange={(value) => {
               if (value != null) {
-                // setSelectedRateToId(value);
+                setSelectedRateToId(value);
                 setSortByRatingTo(`&vote_average.lte=${value}`);
-              } else setSortByRatingTo(``);
-              // setSelectedRateToId(null);
+              } else {
+                setSortByRatingTo(``);
+                setSelectedRateToId(null);
+              }
             }}
           />
         </>
         <Button
           variant="transparent"
+          style={{ height: "20px" }}
           color="rgba(0, 0, 0, 1)"
           onClick={() => {
             setSortMovies("popularity.desc");
-            setSelectedGenreId(null);
+            setSelectedGenreId(undefined);
             setSortByReleaseDate("");
             setSelectedYearId(null);
             setSortByRatingFrom("");
             setSelectedRateFrom(null);
             setSortByRatingTo("");
             setSortByGenres("");
-            // setSelectedRateToId(null);
+            setSelectedRateToId(null);
           }}
         >
           Reset filtres
         </Button>
       </div>
-      <Select
-        mt="md"
-        comboboxProps={{ withinPortal: true }}
-        data={[
-          { label: "Most popular", value: "popularity.desc" },
-          { label: "Least popular", value: "popularity.asc" },
-          { label: "Most rated", value: "vote_average.desc" },
-          { label: "Least rated", value: "vote_average.asc" },
-          { label: "Most voted", value: "vote_count.desc" },
-          { label: "Least voted", value: "vote_count.asc" },
-        ]}
-        // placeholder="To"
-        defaultValue={"popularity.desc"}
-        label=" Sort BY"
-        onChange={(value) => {
-          setSortMovies(`${value}`);
-        }}
-        classNames={classes}
-      />
+      <div className="flex-end">
+        <Select
+          mt="md"
+          style={{ width: "275px", position: "relative" }}
+          comboboxProps={{ withinPortal: true }}
+          data={[
+            { label: "Most popular", value: "popularity.desc" },
+            { label: "Least popular", value: "popularity.asc" },
+            { label: "Most rated", value: "vote_average.desc" },
+            { label: "Least rated", value: "vote_average.asc" },
+            { label: "Most voted", value: "vote_count.desc" },
+            { label: "Least voted", value: "vote_count.asc" },
+          ]}
+          defaultValue={"popularity.desc"}
+          label=" Sort BY"
+          onChange={(value) => {
+            setSortMovies(`${value}`);
+          }}
+          classNames={classes}
+        />
+      </div>
       <div className="CardSection">
         {dataMovies.map((p: dataProp) => (
           <MovieCard setSection={(current: string) => setSection(current)} dataMovie={p} genres={genres} setIdMovie={setIdMovie} key={p.id} />

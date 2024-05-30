@@ -3,7 +3,7 @@
 }
 
 .input {
-  height: 42px;
+  min-height: 42px;
   border-radius: 8px;
   font-size: 14px;
 }
@@ -12,14 +12,11 @@
 }
 
 .option:active {
+  font-size: 14px;
   color: white;
   background-color: #9854f6;
 }
 
-.dropdown {
-  display: block;
-  height: 188px;
-}
 .label {
   /* position: absolute; */
   pointer-events: none;
@@ -29,5 +26,5 @@
   z-index: 1;
 }
 .button {
-  align-items: center;
+  align-items: flex-end;
 }
