@@ -3,11 +3,11 @@ import { Api_k, UrlIdMovie, appendMovie } from "../assets/key";
 import { IconStar } from "@tabler/icons-react";
 import { useDisclosure } from "@mantine/hooks";
 import { Modal, ActionIcon, rem, Button } from "@mantine/core";
-import { BigMovieCardProps, dataProp, Genres, productionCompaniesProps } from "./Interfaces";
+import { BigMovieCardProps, Movie, Genres, productionCompaniesProps } from "./Interfaces";
 import { NoPoster } from "./svgComponents";
 
 export default function BigMovieCard({ idMovie, setSection }: BigMovieCardProps) {
-  const [dataMovie, setDataMovie] = useState<dataProp>();
+  const [dataMovie, setDataMovie] = useState<Movie>();
   const [opened, { open, close }] = useDisclosure(false);
 
   const getImgIcon = useCallback((path: string | undefined, altImg: string) => {
@@ -28,7 +28,7 @@ export default function BigMovieCard({ idMovie, setSection }: BigMovieCardProps)
     getMovieById(idMovie);
   }, [getMovieById, idMovie]);
   console.log(dataMovie);
-  return (
+  return dataMovie != null ? (
     <>
       <Modal opened={opened} onClose={close} title="Your rating" centered>
         <Button.Group>
@@ -40,13 +40,13 @@ export default function BigMovieCard({ idMovie, setSection }: BigMovieCardProps)
       <div className="BigMovieCard">
         <div className="BigMoviesCard_link">
           <a onClick={() => setSection("Movies")}>Movie</a> <p>/</p>
-          <a>{dataMovie?.title}</a>
+          <a>{dataMovie.title}</a>
         </div>
 
         <div className="BigMovieCard_Contener">
           <div className="ImgContent">
-            {dataMovie?.poster_path !== null && <img src={`https://image.tmdb.org/t/p/w500${dataMovie?.poster_path}`}></img>}
-            {dataMovie?.poster_path == null && (
+            {dataMovie.poster_path !== null && <img src={`https://image.tmdb.org/t/p/w500${dataMovie.poster_path}`}></img>}
+            {dataMovie.poster_path == null && (
               <>
                 <NoPoster />
                 No poster
@@ -55,35 +55,35 @@ export default function BigMovieCard({ idMovie, setSection }: BigMovieCardProps)
           </div>
           <div className="BigMovieCard_Contener_Discription">
             <div>
-              <p className="TitleName">{dataMovie?.title}</p>
-              <p className="Grey16">{dataMovie?.release_date.slice(0, 4)}</p>
+              <p className="TitleName">{dataMovie.title}</p>
+              <p className="Grey16">{dataMovie.release_date.slice(0, 4)}</p>
             </div>
 
             <div className="RateBlock">
               <IconStar fill="true" color="#FAB005" />
-              <p>{dataMovie?.vote_average}</p> <p className="Grey16">({dataMovie?.vote_count})</p>
+              <p>{dataMovie.vote_average}</p> <p className="Grey16">({dataMovie.vote_count})</p>
             </div>
 
             <div className="BigMovieCard_Contener_Discription_Detales">
               <div className="Flex">
                 <p className="Grey16">Duration</p>
-                <p>{dataMovie?.runtime}</p>
+                <p>{dataMovie.runtime}</p>
               </div>
               <div className="Flex">
                 <p className="Grey16">Premiere</p>
-                <p>{dataMovie?.release_date}</p>
+                <p>{dataMovie.release_date}</p>
               </div>
               <div className="Flex">
                 <p className="Grey16">Budget</p>
-                <p>${dataMovie?.budget}</p>
+                <p>${dataMovie.budget}</p>
               </div>
               <div className="Flex">
                 <p className="Grey16">Gross worldwide</p>
-                <p>${dataMovie?.revenue}</p>
+                <p>${dataMovie.revenue}</p>
               </div>
               <div className="Flex">
                 <p className="Grey16">Genres</p>
-                {dataMovie?.genres?.map((i: Genres) => (
+                {dataMovie.genres?.map((i: Genres) => (
                   <p key={i.id}> {i.name}</p>
                 ))}
               </div>
@@ -99,7 +99,7 @@ export default function BigMovieCard({ idMovie, setSection }: BigMovieCardProps)
             <p className="Bold20">Trailer</p>
             <iframe
               // src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=1I2E1mAYNqOiw660"
-              src={`https://www.youtube.com/embed/${dataMovie?.videos?.results[0]?.key}`}
+              src={`https://www.youtube.com/embed/${getTrailer(dataMovie)}`}
               title="YouTube video player"
               frameBorder="1"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -110,13 +110,13 @@ export default function BigMovieCard({ idMovie, setSection }: BigMovieCardProps)
           <hr></hr>
           <div className="DiscriptionBlock">
             <p className="Bold20">Discription</p>
-            <p>{dataMovie?.overview}</p>
+            <p>{dataMovie.overview}</p>
           </div>
           <hr />
           <div className="ProductionBlock">
             <p className="Bold20">Production</p>
 
-            {dataMovie?.production_companies.map((i: productionCompaniesProps) => (
+            {dataMovie.production_companies.map((i: productionCompaniesProps) => (
               <div key={i.name} className="ProductionBlock_Companies">
                 {/* <img src={`https://image.tmdb.org/t/p/w500/${i?.logo_path}`}></img> */}
                 <img src={getImgIcon(i?.logo_path, "/src/assets/ClaperBoard.png")}></img>
@@ -127,5 +127,10 @@ export default function BigMovieCard({ idMovie, setSection }: BigMovieCardProps)
         </div>
       </div>
     </>
-  );
+  ) : null;
+}
+
+// dataMovie.videos?.results[0]?.key
+function getTrailer(dataMovie: Movie) {
+  return dataMovie.videos.results.find((v) => v.type === "Trailer")?.key;
 }

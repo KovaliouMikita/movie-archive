@@ -11,7 +11,7 @@ export interface Genre {
 }
 
 export interface MovieCardProps {
-  dataMovie: dataProp;
+  dataMovie: Movie;
   setSection: (section: string) => void;
   setIdMovie: (idMovie: number) => void;
   genres: Genre[];
@@ -25,9 +25,9 @@ export interface Genres {
   name?: string;
   id?: number;
 }
-export interface dataProp {
+export interface Movie {
   poster_path?: string;
-  title: string;
+  title?: string;
   id: number;
   release_date: string;
   vote_average: number;
@@ -38,11 +38,11 @@ export interface dataProp {
   revenue?: number;
   genres?: Genres[];
   overview: string;
-  videos: videosProp;
+  videos: Video;
   production_companies: productionCompaniesProps[];
 }
-interface videosProp {
-  results: { key: string }[];
+export interface Video {
+  results: { key: string; type: string }[];
 }
 
 export interface ButtonProps {

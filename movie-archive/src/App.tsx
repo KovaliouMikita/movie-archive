@@ -4,7 +4,7 @@ import "./App.css";
 import { Api_k, Url, UrlGenres } from "./assets/key";
 import { useEffect, useState } from "react";
 import { useCallback } from "react";
-import { Genre, dataProp } from "./Component/Interfaces";
+import { Genre, Movie } from "./Component/Interfaces";
 //import { Group, Loader } from "@mantine/core";
 
 import Rate from "./Component/Rate";
@@ -15,7 +15,7 @@ import Movies from "./Component/Movies";
 
 export default function App() {
   const [section, setSection] = useState("Movies");
-  const [dataMovies, setDataMovies] = useState<dataProp[]>([]);
+  const [dataMovies, setDataMovies] = useState<Movie[]>([]);
   const [page, setPage] = useState(1);
   const [idMovie, setIdMovie] = useState(0);
   const [sortMovies, setSortMovies] = useState("popularity.desc");
@@ -56,7 +56,7 @@ export default function App() {
   useEffect(() => {
     getAllFetch(page, sortMovies, sortByReleaseDate, sortByRatingFrom, sortByRatingTo, sortByGenres);
   }, [page, sortMovies, sortByReleaseDate, sortByRatingFrom, sortByRatingTo, sortByGenres, getAllFetch]);
-
+  console.log(dataMovies);
   return (
     <div className="App">
       <SideBar Change={(current: string) => setSection(current)}></SideBar>

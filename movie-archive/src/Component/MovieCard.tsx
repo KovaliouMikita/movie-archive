@@ -11,7 +11,7 @@ export default function MovieCard({ dataMovie, setSection, genres, setIdMovie }:
           className="MovieCardImg"
           onClick={() => {
             setSection("BigMovieCard");
-            setIdMovie(dataMovie.id);
+            setIdMovie(dataMovie?.id);
           }}
         >
           {dataMovie?.poster_path !== null && <img src={`https://image.tmdb.org/t/p/w500${dataMovie?.poster_path}`}></img>}

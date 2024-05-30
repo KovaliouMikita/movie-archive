@@ -3,31 +3,31 @@ export function NoPoster() {
   return (
     <>
       <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g clip-path="url(#clip0_28901_365)">
-          <path d="M15.5 8H15.51" stroke="#ACADB9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <g clipPath="url(#clip0_28901_365)">
+          <path d="M15.5 8H15.51" stroke="#ACADB9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           <path
             d="M13.5 21H6.5C5.70435 21 4.94129 20.6839 4.37868 20.1213C3.81607 19.5587 3.5 18.7956 3.5 18V6C3.5 5.20435 3.81607 4.44129 4.37868 3.87868C4.94129 3.31607 5.70435 3 6.5 3H18.5C19.2956 3 20.0587 3.31607 20.6213 3.87868C21.1839 4.44129 21.5 5.20435 21.5 6V13"
             stroke="#ACADB9"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             d="M3.5 16.0001L8.5 11.0001C9.428 10.1071 10.572 10.1071 11.5 11.0001L14.5 14.0001"
             stroke="#ACADB9"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             d="M14.5 14.0001L15.5 13.0001C16.428 12.1071 17.572 12.1071 18.5 13.0001"
             stroke="#ACADB9"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
-          <path d="M22.5 22L17.5 17" stroke="#ACADB9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-          <path d="M17.5 22L22.5 17" stroke="#ACADB9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M22.5 22L17.5 17" stroke="#ACADB9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M17.5 22L22.5 17" stroke="#ACADB9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         </g>
         <defs>
           <clipPath id="clip0_28901_365">
@@ -43,12 +43,12 @@ export function AddMoviesRate() {
   return (
     <>
       <svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-        {/* <mask id="mask0_18128_763" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="45" y="44" width="312" height="219"> */}
-        <path
-          d="M232.034 64.487C296.408 97.497 314.791 75.802 343.744 119.783C372.697 163.765 352.969 245.958 292.133 259.434C231.296 272.91 220.389 239.729 137.825 254.123C55.262 268.517 13.382 142.924 75.118 90.553C136.855 38.183 167.661 31.477 232.034 64.487Z"
-          fill="white"
-        />
-        {/* </mask> */}
+        <mask id="mask0_18128_763" style={{ maskType: "alpha" }} maskUnits="userSpaceOnUse" x="45" y="44" width="312" height="219">
+          <path
+            d="M232.034 64.487C296.408 97.497 314.791 75.802 343.744 119.783C372.697 163.765 352.969 245.958 292.133 259.434C231.296 272.91 220.389 239.729 137.825 254.123C55.262 268.517 13.382 142.924 75.118 90.553C136.855 38.183 167.661 31.477 232.034 64.487Z"
+            fill="white"
+          />
+        </mask>
         <g mask="url(#mask0_18128_763)">
           <path
             d="M232.034 64.487C296.408 97.497 314.791 75.802 343.744 119.783C372.697 163.765 352.969 245.958 292.133 259.434C231.296 272.91 220.389 239.729 137.825 254.123C55.262 268.517 13.382 142.924 75.118 90.553C136.855 38.183 167.661 31.477 232.034 64.487Z"
@@ -57,40 +57,40 @@ export function AddMoviesRate() {
           <path
             d="M167.66 -0.679932C172.369 60.4771 194.281 97.4991 233.396 110.385C272.511 123.272 325.66 104.761 392.842 54.8531"
             stroke="white"
-            stroke-width="1.32"
+            strokeWidth="1.32"
           />
           <path
             d="M190.806 -0.679932C201.231 71.2191 177.817 108.365 120.566 110.76C34.6891 114.352 96.7331 49.1351 126.03 75.1331C155.327 101.13 152.942 157.423 107.23 196.005C76.7551 221.727 42.0331 234.588 3.06409 234.588M367.769 196.825C240.858 188.625 140.19 233.817 65.7651 332.401"
             stroke="white"
-            stroke-width="1.32"
+            strokeWidth="1.32"
           />
-          <path d="M34.6901 195.88C117.937 218.195 171.606 263.702 195.696 332.401" stroke="white" stroke-width="1.32" />
+          <path d="M34.6901 195.88C117.937 218.195 171.606 263.702 195.696 332.401" stroke="white" strokeWidth="1.32" />
           <path
             d="M367.769 116.954C311.599 173.024 272.39 189.326 250.141 165.86C216.767 130.662 280.514 102.944 289.917 134.402C299.32 165.86 249.05 190.826 182.121 201.93C137.502 209.333 84.7041 241.717 23.7271 299.083M243.702 332.401C235.447 283.393 246.243 257.105 276.089 253.538C305.936 249.971 339.122 263.115 375.647 292.969M285.263 59.825C307.878 59.825 326.211 34.105 326.211 2.37598C326.211 -29.352 307.878 -55.072 285.263 -55.072C262.649 -55.072 244.316 -29.352 244.316 2.37598C244.316 34.104 262.649 59.825 285.263 59.825Z"
             stroke="white"
-            stroke-width="1.32"
+            strokeWidth="1.32"
           />
-          <path d="M367.769 153.387C314.599 205.224 291.782 268.07 299.32 341.925" stroke="white" stroke-width="1.32" />
-          <path d="M34.6901 126.345C166.014 152.879 269.066 224.739 343.844 341.925" stroke="white" stroke-width="1.32" />
+          <path d="M367.769 153.387C314.599 205.224 291.782 268.07 299.32 341.925" stroke="white" strokeWidth="1.32" />
+          <path d="M34.6901 126.345C166.014 152.879 269.066 224.739 343.844 341.925" stroke="white" strokeWidth="1.32" />
           <path
             d="M82.9301 -0.679932C42.7901 7.53407 27.9501 24.6621 38.4081 50.7051C54.0951 89.7691 111.904 163.64 34.6901 176.452M34.6901 264.141C65.9461 310.73 99.0671 322.378 134.051 299.083C186.528 264.141 204.321 256.887 226.192 264.141C240.773 268.976 254.033 291.73 265.97 332.401"
             stroke="white"
-            stroke-width="1.32"
+            strokeWidth="1.32"
           />
           <path d="M358.792 205.358H45.0721V267.838H358.792V205.358Z" fill="#F2EBF9" />
-          <path d="M17.7921 205.021H400.592" stroke="black" stroke-width="1.294" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M17.7921 205.021H400.592" stroke="black" strokeWidth="1.294" strokeLinecap="round" strokeLinejoin="round" />
         </g>
-        {/* <mask id="mask1_18128_763" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="96" y="102" width="33" height="42"> */}
-        <path d="M96.2 110.384L113.921 102.497L128.659 135.591L110.939 143.478L96.2 110.384Z" fill="white" />
-        {/* </mask> */}
+        <mask id="mask1_18128_763" style={{ maskType: "alpha" }} maskUnits="userSpaceOnUse" x="96" y="102" width="33" height="42">
+          <path d="M96.2 110.384L113.921 102.497L128.659 135.591L110.939 143.478L96.2 110.384Z" fill="white" />
+        </mask>
         <g mask="url(#mask1_18128_763)">
           <path
             d="M96.2 110.384L113.921 102.496L128.659 135.59L110.938 143.478L96.2 110.384Z"
             fill="white"
             stroke="black"
-            stroke-width="1.384"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="1.384"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             d="M121.299 116.035C132.353 111.114 137.618 98.8251 133.057 88.5851C128.497 78.3451 115.839 74.0321 104.784 78.9531C93.7298 83.8731 88.4648 96.1631 93.0258 106.403C97.5858 116.643 110.244 120.955 121.299 116.035Z"
@@ -107,9 +107,9 @@ export function AddMoviesRate() {
         <path
           d="M244.433 186.615L257.13 186.886V188.31L253.867 188.309C252.955 188.309 252.052 188.488 251.209 188.837C250.366 189.185 249.6 189.697 248.955 190.342C248.31 190.987 247.798 191.752 247.449 192.595C247.1 193.438 246.92 194.341 246.92 195.253V195.27C246.925 197.118 247.663 198.89 248.972 200.195C250.281 201.5 252.055 202.233 253.903 202.233L258.712 202.234C265.214 202.235 270.485 196.967 270.483 190.467V186.49C270.481 177.793 263.427 170.742 254.727 170.741H254.726L209.56 170.732"
           stroke="black"
-          stroke-width="1.384"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.384"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           fill-rule="evenodd"
@@ -120,9 +120,9 @@ export function AddMoviesRate() {
         <path
           d="M244.433 186.615L257.13 186.886V188.31L253.867 188.309C252.955 188.309 252.052 188.488 251.209 188.837C250.366 189.185 249.6 189.697 248.955 190.342C248.31 190.987 247.798 191.752 247.449 192.595C247.1 193.438 246.92 194.341 246.92 195.253V195.27C246.925 197.118 247.663 198.89 248.972 200.195C250.281 201.5 252.055 202.233 253.903 202.233L258.712 202.234C265.214 202.235 270.485 196.967 270.483 190.467V186.49C270.481 177.793 263.427 170.742 254.727 170.741H254.726L209.56 170.732"
           stroke="black"
-          stroke-width="1.384"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.384"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           fill-rule="evenodd"
@@ -133,9 +133,9 @@ export function AddMoviesRate() {
         <path
           d="M211.692 207.182L246.934 207.188C248.746 207.189 250.487 206.478 251.78 205.208C253.073 203.938 253.815 202.211 253.847 200.399C253.877 198.628 253.203 196.918 251.972 195.645C250.742 194.371 249.056 193.639 247.285 193.608L247.168 193.607L230.693 193.604"
           stroke="black"
-          stroke-width="1.32"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.32"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           fill-rule="evenodd"
@@ -143,16 +143,16 @@ export function AddMoviesRate() {
           d="M111.644 127.635C116.576 125.265 122.128 124.506 127.515 125.467C132.902 126.428 137.85 129.059 141.658 132.988L172.825 165.133L221.218 164.298L222.006 208.922L148.882 210.184C142.091 210.3 135.423 208.373 129.741 204.653C124.058 200.933 119.625 195.592 117.015 189.322L101.94 153.128C97.8879 143.398 102.15 132.2 111.644 127.635Z"
           fill="#EAEBED"
           stroke="black"
-          stroke-width="1.32"
-          stroke-linejoin="round"
+          strokeWidth="1.32"
+          strokeLinejoin="round"
         />
-        <path d="M180.306 165.053L158.03 166.01L143.883 145.244" stroke="black" stroke-width="1.32" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M180.306 165.053L158.03 166.01L143.883 145.244" stroke="black" strokeWidth="1.32" strokeLinecap="round" strokeLinejoin="round" />
         <path
           d="M115.144 126.335C120.227 125.201 125.539 125.698 130.323 127.755C135.108 129.812 139.123 133.324 141.798 137.793L143.565 140.743L147.539 141.398C147.645 144.121 148.337 146.789 149.568 149.221C150.799 151.652 152.54 153.789 154.672 155.486L167.344 165.573"
           stroke="black"
-          stroke-width="1.32"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.32"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           fill-rule="evenodd"
@@ -160,8 +160,8 @@ export function AddMoviesRate() {
           d="M207.401 160.142L222.168 161.452L223.052 211.575L206.088 213.176L207.401 160.142Z"
           fill="#EAEBED"
           stroke="black"
-          stroke-width="1.32"
-          stroke-linejoin="round"
+          strokeWidth="1.32"
+          strokeLinejoin="round"
         />
         <path
           fill-rule="evenodd"
@@ -175,9 +175,9 @@ export function AddMoviesRate() {
           d="M115.689 83.8881L120.291 94.2221C123.78 102.056 120.26 111.231 112.43 114.717C104.6 118.202 95.425 114.677 91.936 106.844L87.334 96.5091C83.845 88.6761 87.364 79.5001 95.194 76.0151C103.025 72.5301 112.2 76.0551 115.689 83.8881Z"
           fill="white"
           stroke="black"
-          stroke-width="1.412"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.412"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           fill-rule="evenodd"
@@ -188,9 +188,9 @@ export function AddMoviesRate() {
         <path
           d="M117.073 104.905C115.794 105.474 114.341 105.511 113.034 105.009C111.727 104.507 110.673 103.506 110.104 102.227"
           stroke="black"
-          stroke-width="1.412"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.412"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           fill-rule="evenodd"
@@ -213,18 +213,18 @@ export function AddMoviesRate() {
         <path
           d="M91.7401 98.4519L89.9801 98.9319C89.4294 99.0822 88.9206 99.3569 88.4928 99.7349C88.065 100.113 87.7297 100.584 87.5126 101.112C87.2956 101.64 87.2026 102.21 87.2408 102.78C87.279 103.35 87.4474 103.903 87.7331 104.397C88.4463 105.632 89.5157 106.623 90.8015 107.24C92.0872 107.857 93.5294 108.072 94.9391 107.856L95.8661 107.714M91.0481 102.098L92.3321 104.982M91.8551 103.911L90.0221 103.423"
           stroke="black"
-          stroke-width="1.412"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.412"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path fill-rule="evenodd" clip-rule="evenodd" d="M118.246 89.814L123.146 94.24L120.465 97.11" fill="white" />
-        <path d="M118.246 89.814L123.146 94.24L120.465 97.11" stroke="black" stroke-width="1.412" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M118.246 89.814L123.146 94.24L120.465 97.11" stroke="black" strokeWidth="1.412" strokeLinecap="round" strokeLinejoin="round" />
         <path
           d="M111.957 93.7201C113.5 93.0331 114.431 91.7571 114.036 90.8701C113.641 89.9831 112.07 89.8211 110.527 90.5081C108.984 91.1951 108.053 92.4711 108.448 93.3581C108.843 94.2441 110.414 94.4071 111.957 93.7201Z"
           stroke="black"
-          stroke-width="0.941"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="0.941"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           d="M111.957 93.72C112.883 93.307 113.313 92.254 112.918 91.368C112.524 90.481 111.453 90.096 110.527 90.508C109.601 90.92 109.171 91.973 109.566 92.86C109.96 93.747 111.031 94.131 111.957 93.72Z"
@@ -245,26 +245,26 @@ export function AddMoviesRate() {
         <path
           d="M291.196 140.318V204.653M334.531 140.318V204.653M286.512 143.953H338.859"
           stroke="#436FFF"
-          stroke-width="1.384"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.384"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
-        <path d="M298.976 143.92V177.815" stroke="#436FFF" stroke-width="0.97" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M298.976 143.92V177.815" stroke="#436FFF" strokeWidth="0.97" strokeLinecap="round" strokeLinejoin="round" />
         <path
           d="M298.976 185.963C299.528 185.963 300.075 185.854 300.585 185.643C301.095 185.431 301.559 185.122 301.949 184.731C302.34 184.341 302.649 183.877 302.861 183.367C303.072 182.857 303.181 182.31 303.181 181.757C303.18 181.205 303.072 180.658 302.86 180.148C302.649 179.638 302.339 179.175 301.949 178.784C301.558 178.394 301.094 178.084 300.584 177.873C300.074 177.662 299.527 177.553 298.975 177.553C297.86 177.553 296.79 177.996 296.002 178.785C295.213 179.574 294.77 180.643 294.771 181.758C294.771 182.874 295.214 183.943 296.002 184.732C296.791 185.52 297.861 185.963 298.976 185.963Z"
           fill="#436FFF"
         />
-        <path d="M308.031 143.92V177.815" stroke="#436FFF" stroke-width="0.97" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M308.031 143.92V177.815" stroke="#436FFF" strokeWidth="0.97" strokeLinecap="round" strokeLinejoin="round" />
         <path
           d="M308.031 185.963C308.583 185.963 309.13 185.854 309.64 185.643C310.15 185.431 310.614 185.122 311.004 184.731C311.395 184.341 311.704 183.877 311.916 183.367C312.127 182.857 312.236 182.31 312.235 181.757C312.235 181.205 312.127 180.658 311.915 180.148C311.704 179.638 311.394 179.175 311.003 178.784C310.613 178.394 310.149 178.084 309.639 177.873C309.129 177.662 308.582 177.553 308.03 177.553C306.915 177.553 305.845 177.996 305.057 178.785C304.268 179.574 303.825 180.643 303.825 181.758C303.826 182.874 304.269 183.943 305.057 184.732C305.846 185.52 306.916 185.963 308.031 185.963Z"
           fill="#436FFF"
         />
-        <path d="M317.086 143.92V177.815" stroke="#436FFF" stroke-width="0.97" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M317.086 143.92V177.815" stroke="#436FFF" strokeWidth="0.97" strokeLinecap="round" strokeLinejoin="round" />
         <path
           d="M317.086 185.963C317.638 185.963 318.185 185.854 318.695 185.643C319.205 185.431 319.669 185.122 320.059 184.731C320.45 184.341 320.759 183.877 320.97 183.367C321.182 182.857 321.29 182.31 321.29 181.757C321.29 181.205 321.181 180.658 320.97 180.148C320.759 179.638 320.449 179.175 320.058 178.784C319.668 178.394 319.204 178.084 318.694 177.873C318.184 177.662 317.637 177.553 317.085 177.553C315.97 177.553 314.9 177.996 314.112 178.785C313.323 179.574 312.88 180.643 312.88 181.758C312.881 182.874 313.324 183.943 314.112 184.732C314.901 185.52 315.971 185.963 317.086 185.963Z"
           fill="#436FFF"
         />
-        <path d="M326.141 143.92V177.815" stroke="#436FFF" stroke-width="0.97" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M326.141 143.92V177.815" stroke="#436FFF" strokeWidth="0.97" strokeLinecap="round" strokeLinejoin="round" />
         <path
           d="M326.141 185.963C327.256 185.963 328.326 185.52 329.114 184.731C329.903 183.943 330.346 182.873 330.346 181.758C330.346 180.643 329.903 179.573 329.114 178.785C328.326 177.996 327.256 177.553 326.141 177.553C325.026 177.553 323.956 177.996 323.168 178.785C322.379 179.573 321.936 180.643 321.936 181.758C321.936 182.873 322.379 183.943 323.168 184.731C323.956 185.52 325.026 185.963 326.141 185.963Z"
           fill="#436FFF"
@@ -351,12 +351,12 @@ export function Search() {
   return (
     <>
       <svg width="311" height="253" viewBox="0 0 311 253" fill="none" xmlns="http://www.w3.org/2000/svg">
-        {/* <mask id="mask0_18128_818" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="311" height="253"> */}
-        <path
-          d="M186.052 23.1597C249.566 61.0657 287.69 67.7927 304.456 118.262C321.221 168.731 305.372 231.544 245.348 247.019C185.323 262.493 183.694 236.837 93.1009 240.92C2.50686 245.003 -29.6811 113.229 31.2309 53.0927C92.1429 -7.04434 122.538 -14.7453 186.052 23.1597Z"
-          fill="white"
-        />
-        {/* </mask> */}
+        <mask id="mask0_18128_818" style={{ maskType: "alpha" }} maskUnits="userSpaceOnUse" x="0" y="0" width="311" height="253">
+          <path
+            d="M186.052 23.1597C249.566 61.0657 287.69 67.7927 304.456 118.262C321.221 168.731 305.372 231.544 245.348 247.019C185.323 262.493 183.694 236.837 93.1009 240.92C2.50686 245.003 -29.6811 113.229 31.2309 53.0927C92.1429 -7.04434 122.538 -14.7453 186.052 23.1597Z"
+            fill="white"
+          />
+        </mask>
         <g mask="url(#mask0_18128_818)">
           <path
             d="M136.116 210.238C182.898 210.238 220.823 172.314 220.823 125.531C220.823 78.7487 182.898 40.8247 136.116 40.8247C89.3338 40.8247 51.4098 78.7487 51.4098 125.531C51.4098 172.314 89.3338 210.238 136.116 210.238Z"
@@ -380,7 +380,7 @@ export function Search() {
           <path
             d="M194.579 186.081C227.659 153.001 227.659 99.3675 194.579 66.2875C161.499 33.2075 107.866 33.2075 74.7858 66.2875C41.7058 99.3675 41.7058 153.001 74.7858 186.081C107.866 219.161 161.499 219.161 194.579 186.081Z"
             stroke="#9854F6"
-            stroke-width="20.711"
+            strokeWidth="20.711"
           />
           {/* <mask id="mask1_18128_818" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="60" y="32" width="193" height="169"> */}
           <path
@@ -399,9 +399,9 @@ export function Search() {
             <path
               d="M127.636 129.099L119.208 109.249L137.331 101.559L145.758 121.408"
               stroke="black"
-              stroke-width="1.32"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="1.32"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             {/* <mask id="mask2_18128_818" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="119" y="101" width="27" height="32"> */}
             <path
@@ -425,16 +425,16 @@ export function Search() {
               d="M136.588 84.3277L138.313 83.2607C138.788 82.9671 139.324 82.7865 139.88 82.7328C140.436 82.679 140.997 82.7536 141.52 82.9508C142.042 83.1479 142.513 83.4624 142.895 83.87C143.277 84.2776 143.56 84.7674 143.723 85.3017L143.772 85.4607C144.194 86.8415 144.189 88.3175 143.757 89.6952C143.326 91.073 142.488 92.2883 141.354 93.1817L140.6 93.7767L136.588 84.3277Z"
               fill="white"
               stroke="black"
-              stroke-width="1.32"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="1.32"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               d="M139.772 86.3296L141.021 89.2716M140.557 88.1786L141.464 86.4836"
               stroke="black"
-              stroke-width="1.32"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="1.32"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               fill-rule="evenodd"
@@ -442,16 +442,16 @@ export function Search() {
               d="M107.57 96.6445L105.605 97.1445C105.063 97.282 104.561 97.5419 104.136 97.9043C103.711 98.2667 103.375 98.7219 103.153 99.2348C102.932 99.7476 102.831 100.304 102.859 100.862C102.887 101.42 103.043 101.964 103.314 102.453L103.395 102.599C104.095 103.861 105.161 104.883 106.452 105.53C107.743 106.177 109.199 106.419 110.63 106.224L111.582 106.095L107.57 96.6445Z"
               fill="white"
               stroke="black"
-              stroke-width="1.32"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="1.32"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               d="M106.8 100.326L108.049 103.268M107.584 102.176L105.735 101.651"
               stroke="black"
-              stroke-width="1.32"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="1.32"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               fill-rule="evenodd"
@@ -459,23 +459,23 @@ export function Search() {
               d="M134.678 79.8417L139.121 90.3057C142.523 98.3187 138.787 107.572 130.777 110.971C122.766 114.371 113.514 110.63 110.112 102.617L105.669 92.1527C102.267 84.1387 106.002 74.8867 114.013 71.4867C122.024 68.0877 131.276 71.8277 134.678 79.8417Z"
               fill="white"
               stroke="black"
-              stroke-width="1.32"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="1.32"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               d="M127.81 103.025C129.116 102.471 130.15 101.422 130.682 100.107C131.215 98.7919 131.204 97.3192 130.651 96.0126M122.487 93.7776L123.466 97.7426L125.655 97.2256"
               stroke="black"
-              stroke-width="1.32"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="1.32"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               d="M114.721 95.7636C116.299 95.0946 117.267 93.8186 116.883 92.9136C116.499 92.0086 114.908 91.8176 113.33 92.4876C111.752 93.1576 110.785 94.4335 111.169 95.3385C111.553 96.2425 113.143 96.4336 114.721 95.7636Z"
               stroke="black"
-              stroke-width="0.73"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="0.73"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               d="M114.721 95.7636C115.668 95.3616 116.124 94.3026 115.74 93.3976C115.356 92.4936 114.277 92.0856 113.33 92.4876C112.384 92.8896 111.928 93.9486 112.312 94.8526C112.696 95.7576 113.775 96.1656 114.721 95.7636Z"
@@ -484,9 +484,9 @@ export function Search() {
             <path
               d="M130.548 89.0466C132.126 88.3766 133.094 87.1006 132.71 86.1956C132.325 85.2906 130.735 85.1006 129.157 85.7696C127.579 86.4396 126.611 87.7156 126.995 88.6206C127.379 89.5256 128.97 89.7156 130.548 89.0466Z"
               stroke="black"
-              stroke-width="0.73"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="0.73"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               d="M130.548 89.0455C131.495 88.6435 131.951 87.5845 131.567 86.6805C131.183 85.7755 130.104 85.3675 129.157 85.7695C128.21 86.1715 127.754 87.2305 128.138 88.1345C128.522 89.0395 129.601 89.4475 130.548 89.0455Z"
@@ -501,22 +501,22 @@ export function Search() {
             <path
               d="M106.664 95.7006C101.02 92.3746 97.1349 88.2336 96.7679 83.8626C96.4439 80.0056 98.0129 77.8266 101.473 77.3266C102.403 71.8036 111.295 61.1416 118.389 60.5296C120.956 60.3076 122.464 61.5986 122.91 64.4026C126.001 63.6356 128.897 63.5106 131.598 64.0266C136.901 65.0396 138.301 70.7786 136.746 75.9576C137.12 78.0316 137.378 80.6376 137.74 82.7716"
               stroke="white"
-              stroke-width="0.88"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="0.88"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
-            <path d="M124.996 197.951L121.225 190.295" stroke="black" stroke-width="1.32" stroke-linecap="round" stroke-linejoin="round" />
-            <path d="M117.817 138.214L145.283 141.632L155.212 116.38" stroke="black" stroke-width="1.32" stroke-linejoin="round" />
+            <path d="M124.996 197.951L121.225 190.295" stroke="black" strokeWidth="1.32" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M117.817 138.214L145.283 141.632L155.212 116.38" stroke="black" strokeWidth="1.32" strokeLinejoin="round" />
             <path
               fill-rule="evenodd"
               clip-rule="evenodd"
               d="M147.137 48.1496L149.368 93.6776L166.061 91.9496L151.611 108.878L211.642 236.338L230.741 200.171L196.575 138.86L231.731 84.3546C239.633 72.1046 236.109 55.7626 223.862 47.8526C219.04 44.7376 213.335 43.2799 207.61 43.7006L147.137 48.1496Z"
               fill="#EAEBED"
               stroke="black"
-              stroke-width="1.32"
-              stroke-linejoin="round"
+              strokeWidth="1.32"
+              strokeLinejoin="round"
             />
-            <path d="M165.136 93.1025L174.78 80.9045" stroke="black" stroke-width="1.32" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M165.136 93.1025L174.78 80.9045" stroke="black" strokeWidth="1.32" strokeLinecap="round" strokeLinejoin="round" />
             <path
               fill-rule="evenodd"
               clip-rule="evenodd"
@@ -526,8 +526,8 @@ export function Search() {
             <path
               d="M162.93 96.0107L168.417 128.479L176.437 126.883C177.388 126.694 178.367 126.703 179.315 126.91C180.262 127.118 181.156 127.518 181.941 128.087C182.726 128.656 183.385 129.381 183.877 130.217C184.369 131.052 184.682 131.98 184.799 132.943L191.755 190.295"
               stroke="black"
-              stroke-width="1.32"
-              stroke-linejoin="round"
+              strokeWidth="1.32"
+              strokeLinejoin="round"
             />
             <path
               fill-rule="evenodd"
@@ -535,10 +535,10 @@ export function Search() {
               d="M116.564 132.88L170.176 254.976L150.281 264.112L123.109 208.549L119.211 225.646L81.3029 212.289L87.0229 157.999C87.3368 155.016 88.3725 152.154 90.0407 149.661C91.7088 147.168 93.959 145.119 96.5968 143.691L116.564 132.88Z"
               fill="#EAEBED"
               stroke="black"
-              stroke-width="1.32"
-              stroke-linejoin="round"
+              strokeWidth="1.32"
+              strokeLinejoin="round"
             />
-            <path d="M197.455 140.424L193.644 133.761" stroke="black" stroke-width="1.32" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M197.455 140.424L193.644 133.761" stroke="black" strokeWidth="1.32" strokeLinecap="round" strokeLinejoin="round" />
             <path
               fill-rule="evenodd"
               clip-rule="evenodd"
@@ -548,8 +548,8 @@ export function Search() {
             <path
               d="M103.335 139.497L122.873 162.106L117.965 173.67C117.503 174.759 117.342 175.953 117.499 177.126C117.656 178.299 118.126 179.408 118.859 180.338L157.416 229.23"
               stroke="black"
-              stroke-width="1.32"
-              stroke-linejoin="round"
+              strokeWidth="1.32"
+              strokeLinejoin="round"
             />
           </g>
           <path
@@ -561,9 +561,9 @@ export function Search() {
           <path
             d="M143.535 79.2215L95.9798 83.0916C94.3387 83.2246 92.7088 82.7256 91.4235 81.6965C90.1383 80.6674 89.2948 79.186 89.0658 77.5555C88.9548 76.7676 89.0002 75.9655 89.1992 75.1951C89.3983 74.4247 89.7472 73.701 90.226 73.0654C90.7048 72.4299 91.3041 71.8949 91.9897 71.491C92.6753 71.0871 93.4338 70.8222 94.2218 70.7115L94.2488 70.7076L146.069 63.6646"
             stroke="black"
-            stroke-width="1.716"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="1.716"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             fill-rule="evenodd"
@@ -574,41 +574,41 @@ export function Search() {
           <path
             d="M143.536 79.2205L110.206 81.2225C108.551 81.3216 106.92 80.7938 105.637 79.7441C104.354 78.6945 103.514 77.2 103.283 75.5585C103.172 74.7718 103.218 73.9709 103.416 73.2017C103.615 72.4325 103.963 71.7099 104.442 71.0753C104.92 70.4407 105.518 69.9065 106.202 69.5032C106.887 69.0998 107.644 68.8352 108.431 68.7245L108.467 68.7195L146.069 63.6655"
             stroke="black"
-            stroke-width="1.32"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="1.32"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             d="M88.6458 173.837C89.0346 173.074 89.2692 172.242 89.3364 171.388C89.4035 170.534 89.3019 169.676 89.0373 168.862C88.7727 168.047 88.3503 167.293 87.7942 166.642C87.2381 165.991 86.5593 165.456 85.7963 165.067C85.0334 164.678 84.2014 164.444 83.3478 164.377C82.4942 164.309 81.6358 164.411 80.8214 164.676C80.0071 164.94 79.2529 165.363 78.6018 165.919C77.9507 166.475 77.4156 167.154 77.0268 167.917L70.5118 180.703C70.1172 181.466 69.8775 182.3 69.8063 183.157C69.7352 184.013 69.8341 184.875 70.0973 185.693C70.3606 186.511 70.783 187.269 71.3402 187.924C71.8975 188.578 72.5786 189.116 73.3444 189.506C74.1102 189.896 74.9456 190.131 75.8025 190.197C76.6594 190.263 77.5209 190.159 78.3374 189.891C79.154 189.623 79.9095 189.196 80.5606 188.635C81.2116 188.074 81.7452 187.39 82.1308 186.622L88.6458 173.837Z"
             fill="white"
             stroke="black"
-            stroke-width="1.32"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="1.32"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             d="M100.269 179.758C100.672 178.993 100.919 178.156 100.996 177.296C101.073 176.435 100.978 175.567 100.717 174.744C100.456 173.92 100.033 173.156 99.4744 172.497C98.9154 171.838 98.231 171.297 97.4609 170.905C96.6909 170.512 95.8505 170.277 94.9887 170.212C94.127 170.148 93.2609 170.255 92.441 170.528C91.6211 170.801 90.8636 171.234 90.2125 171.803C89.5615 172.371 89.03 173.063 88.6488 173.839L82.1338 186.625C81.7392 187.388 81.4994 188.222 81.4283 189.079C81.3571 189.935 81.456 190.797 81.7193 191.615C81.9825 192.434 82.4049 193.192 82.9622 193.846C83.5194 194.5 84.2005 195.038 84.9663 195.428C85.7321 195.818 86.5675 196.053 87.4244 196.119C88.2813 196.185 89.1428 196.081 89.9594 195.813C90.776 195.545 91.5315 195.118 92.1825 194.557C92.8335 193.996 93.3672 193.312 93.7528 192.544L100.269 179.758Z"
             fill="white"
             stroke="black"
-            stroke-width="1.32"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="1.32"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             d="M111.891 185.68C112.285 184.916 112.525 184.082 112.596 183.226C112.667 182.369 112.569 181.507 112.305 180.689C112.042 179.871 111.62 179.113 111.062 178.459C110.505 177.804 109.824 177.267 109.058 176.876C108.292 176.486 107.457 176.251 106.6 176.185C105.743 176.119 104.882 176.223 104.065 176.491C103.249 176.759 102.493 177.186 101.842 177.747C101.191 178.308 100.657 178.993 100.272 179.761L93.7558 192.547C93.3526 193.311 93.1053 194.148 93.0283 195.009C92.9514 195.869 93.0463 196.737 93.3076 197.561C93.5688 198.384 93.9912 199.148 94.5502 199.807C95.1092 200.466 95.7936 201.008 96.5636 201.4C97.3337 201.792 98.174 202.027 99.0358 202.092C99.8976 202.157 100.764 202.049 101.584 201.776C102.404 201.503 103.161 201.07 103.812 200.502C104.463 199.933 104.995 199.241 105.376 198.466L111.891 185.68Z"
             fill="white"
             stroke="black"
-            stroke-width="1.32"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="1.32"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             d="M123.513 191.602C123.907 190.838 124.147 190.004 124.218 189.148C124.289 188.291 124.191 187.429 123.927 186.611C123.664 185.793 123.242 185.035 122.684 184.38C122.127 183.726 121.446 183.188 120.68 182.798C119.914 182.408 119.079 182.173 118.222 182.107C117.365 182.041 116.504 182.145 115.687 182.413C114.871 182.681 114.115 183.108 113.464 183.669C112.813 184.23 112.279 184.914 111.894 185.683L105.379 198.468C104.99 199.23 104.755 200.062 104.688 200.916C104.621 201.77 104.723 202.628 104.987 203.442C105.252 204.257 105.674 205.011 106.23 205.662C106.787 206.313 107.465 206.848 108.228 207.237C108.991 207.626 109.823 207.86 110.677 207.928C111.53 207.995 112.389 207.893 113.203 207.629C114.018 207.364 114.772 206.942 115.423 206.385C116.074 205.829 116.609 205.15 116.998 204.388L123.513 191.602Z"
             fill="white"
             stroke="black"
-            stroke-width="1.32"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="1.32"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </g>
       </svg>
