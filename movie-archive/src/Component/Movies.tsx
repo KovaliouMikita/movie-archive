@@ -6,6 +6,7 @@ import { useCallback, useMemo, useState } from "react";
 import { dataProp, Genre } from "./Interfaces";
 
 export interface Props {
+  page: number;
   dataMovies: dataProp[];
   setSection: (section: string) => void;
   setPage: (numberPage: number) => void;
@@ -19,6 +20,7 @@ export interface Props {
 }
 
 export default function Movies({
+  page,
   dataMovies,
   setSection,
   setPage,
@@ -216,26 +218,42 @@ export default function Movies({
           <Button
             variant="default"
             onClick={() => {
-              setPage(1);
+              setPage(page - 1);
             }}
           >
-            1
+            {"<"}
           </Button>
           <Button
             variant="default"
             onClick={() => {
-              setPage(2);
+              setPage(page - 1);
             }}
           >
-            2
+            {page}
           </Button>
           <Button
             variant="default"
             onClick={() => {
-              setPage(3);
+              setPage(page + 1);
             }}
           >
-            3
+            {page + 1}
+          </Button>
+          <Button
+            variant="default"
+            onClick={() => {
+              setPage(page + 2);
+            }}
+          >
+            {page + 2}
+          </Button>
+          <Button
+            variant="default"
+            onClick={() => {
+              setPage(page + 1);
+            }}
+          >
+            {">"}
           </Button>
         </Button.Group>
       </Flex>

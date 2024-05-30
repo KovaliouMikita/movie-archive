@@ -63,6 +63,7 @@ export default function App() {
       {section === "Movies" && (
         <>
           <Movies
+            page={page}
             setPage={setPage}
             setSection={setSection}
             setSortMovies={setSortMovies}
