@@ -3,20 +3,13 @@ import { Api_k, UrlIdMovie, appendMovie } from "../assets/key";
 import { IconStar } from "@tabler/icons-react";
 import { useDisclosure } from "@mantine/hooks";
 import { Modal, ActionIcon, rem, Button } from "@mantine/core";
-import { BigMovieCardProps, Movie, Genres, productionCompaniesProps } from "./Interfaces";
-import { NoPoster } from "./svgComponents";
+import { BigMovieCardP, Genres, Movie, productionCompaniesP } from "./Interfaces";
+import NoPoster from "./Svg/NoPoster";
+import NoLogoCompanies from "./Svg/NoLogoCompanies";
 
-export default function BigMovieCard({ idMovie, setSection }: BigMovieCardProps) {
+export default function BigMovieCard({ idMovie, setSection }: BigMovieCardP) {
   const [dataMovie, setDataMovie] = useState<Movie>();
   const [opened, { open, close }] = useDisclosure(false);
-
-  const getImgIcon = useCallback((path: string | undefined, altImg: string) => {
-    if (path != null) {
-      return `https://image.tmdb.org/t/p/w500${path}`;
-    } else {
-      return altImg;
-    }
-  }, []);
 
   const getMovieById = useCallback((idMovie: number) => {
     fetch(UrlIdMovie + idMovie + Api_k + appendMovie)
@@ -98,7 +91,6 @@ export default function BigMovieCard({ idMovie, setSection }: BigMovieCardProps)
           <div className="TrailerBlock">
             <p className="Bold20">Trailer</p>
             <iframe
-              // src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=1I2E1mAYNqOiw660"
               src={`https://www.youtube.com/embed/${getTrailer(dataMovie)}`}
               title="YouTube video player"
               frameBorder="1"
@@ -116,10 +108,11 @@ export default function BigMovieCard({ idMovie, setSection }: BigMovieCardProps)
           <div className="ProductionBlock">
             <p className="Bold20">Production</p>
 
-            {dataMovie.production_companies.map((i: productionCompaniesProps) => (
+            {dataMovie.production_companies.map((i: productionCompaniesP) => (
               <div key={i.name} className="ProductionBlock_Companies">
                 {/* <img src={`https://image.tmdb.org/t/p/w500/${i?.logo_path}`}></img> */}
-                <img src={getImgIcon(i?.logo_path, "/src/assets/ClaperBoard.png")}></img>
+                {i?.logo_path !== null && <img src={`https://image.tmdb.org/t/p/w500/${i?.logo_path}`}></img>}
+                {i?.logo_path == null && <NoLogoCompanies />}
                 <p className="Bold16">{i.name}</p>
               </div>
             ))}

@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
 
-export interface BigMovieCardProps {
+export interface BigMovieCardP {
   idMovie: number;
   setSection: (section: string) => void;
 }
@@ -10,14 +10,14 @@ export interface Genre {
   id: number;
 }
 
-export interface MovieCardProps {
-  dataMovie: Movie;
+export interface MovieCardP {
+  movie: Movie;
   setSection: (section: string) => void;
   setIdMovie: (idMovie: number) => void;
   genres: Genre[];
 }
 
-export interface productionCompaniesProps {
+export interface productionCompaniesP {
   logo_path?: string;
   name?: string;
 }
@@ -39,18 +39,18 @@ export interface Movie {
   genres?: Genres[];
   overview: string;
   videos: Video;
-  production_companies: productionCompaniesProps[];
+  production_companies: productionCompaniesP[];
 }
 export interface Video {
   results: { key: string; type: string }[];
 }
 
-export interface ButtonProps {
+export interface ButtonP {
   children: ReactElement | string;
   onClick?: () => void | string | boolean;
   isActive?: boolean;
 }
 
-export interface SideBarProps {
+export interface SideBarP {
   Change: (arg0: string) => void;
 }

@@ -15,7 +15,7 @@ import Movies from "./Component/Movies";
 
 export default function App() {
   const [section, setSection] = useState("Movies");
-  const [dataMovies, setDataMovies] = useState<Movie[]>([]);
+  const [movies, setMovies] = useState<Movie[]>([]);
   const [page, setPage] = useState(1);
   const [idMovie, setIdMovie] = useState(0);
   const [sortMovies, setSortMovies] = useState("popularity.desc");
@@ -36,7 +36,7 @@ export default function App() {
     fetch(`${Url}discover/movie${Api_k}&page=${page}&sort_by=${sortMovies}${sortByReleaseDate}${sortByRatingFrom}${sortByRatingTo}${sortByGenres}`)
       .then((res) => res.json())
       .then((data) => {
-        setDataMovies(data.results);
+        setMovies(data.results);
       });
   }
 
@@ -56,10 +56,10 @@ export default function App() {
   useEffect(() => {
     getAllFetch(page, sortMovies, sortByReleaseDate, sortByRatingFrom, sortByRatingTo, sortByGenres);
   }, [page, sortMovies, sortByReleaseDate, sortByRatingFrom, sortByRatingTo, sortByGenres, getAllFetch]);
-  console.log(dataMovies);
   return (
     <div className="App">
       <SideBar Change={(current: string) => setSection(current)}></SideBar>
+      {/* {dataMovies === [] && <Error404 />} */}
       {section === "Movies" && (
         <>
           <Movies
@@ -71,7 +71,7 @@ export default function App() {
             setSortByRatingTo={setSortByRatingTo}
             setSortByReleaseDate={setSortByReleaseDate}
             setSortByGenres={setSortByGenres}
-            dataMovies={dataMovies}
+            movies={movies}
             genres={genres}
             setIdMovie={setIdMovie}
           ></Movies>

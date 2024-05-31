@@ -3,11 +3,11 @@ import { Flex, Select, ComboboxData, MultiSelect } from "@mantine/core";
 import classes from "./Css/ContainedInput.module.css";
 import { Button } from "@mantine/core";
 import { useCallback, useMemo, useState } from "react";
-import { dataProp, Genre } from "./Interfaces";
+import { Movie, Genre } from "./Interfaces";
 
 export interface Props {
   page: number;
-  dataMovies: dataProp[];
+  movies: Movie[];
   setSection: (section: string) => void;
   setPage: (numberPage: number) => void;
   setSortMovies: (quaryParameter: string) => void;
@@ -21,7 +21,7 @@ export interface Props {
 
 export default function Movies({
   page,
-  dataMovies,
+  movies,
   setSection,
   setPage,
   genres,
@@ -209,8 +209,8 @@ export default function Movies({
         />
       </div>
       <div className="CardSection">
-        {dataMovies.map((p: dataProp) => (
-          <MovieCard setSection={(current: string) => setSection(current)} dataMovie={p} genres={genres} setIdMovie={setIdMovie} key={p.id} />
+        {movies.map((movie: Movie) => (
+          <MovieCard setSection={(current: string) => setSection(current)} movie={movie} genres={genres} setIdMovie={setIdMovie} key={movie.id} />
         ))}
       </div>
       <Flex mih={50} bg="rgba(234, 235, 237, 1)" gap="xs" justify="flex-end" align="flex-start" direction="row" wrap="wrap">
