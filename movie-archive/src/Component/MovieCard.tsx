@@ -17,7 +17,6 @@ export default function MovieCard({ movie, setSection, genres, setIdMovie }: Mov
           {movie?.poster_path !== null && <img src={`https://image.tmdb.org/t/p/w500${movie?.poster_path}`}></img>}
           {movie?.poster_path == null && (
             <>
-              {" "}
               <NoPoster />
               No poster
             </>

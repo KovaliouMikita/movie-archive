@@ -20,7 +20,7 @@ export default function BigMovieCard({ idMovie, setSection }: BigMovieCardP) {
   useEffect(() => {
     getMovieById(idMovie);
   }, [getMovieById, idMovie]);
-  console.log(dataMovie);
+
   return dataMovie != null ? (
     <>
       <Modal opened={opened} onClose={close} title="Your rating" centered>

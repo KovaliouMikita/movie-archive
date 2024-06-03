@@ -94,11 +94,12 @@ export default function Movies({
         <>
           <MultiSelect
             mt="md"
+            style={{ width: "284px" }}
             comboboxProps={{ withinPortal: true }}
             value={selectedGenreId}
             data={genreOptions}
             maxDropdownHeight="188px"
-            placeholder={"Select genres"}
+            placeholder={placeholderSelect(selectedGenreId?.toString())}
             label="Genres"
             classNames={classes}
             clearable
@@ -108,6 +109,7 @@ export default function Movies({
         <>
           <Select
             mt="md"
+            style={{ width: "284px" }}
             comboboxProps={{ withinPortal: true }}
             data={getDateRange}
             maxDropdownHeight="188px"
@@ -129,6 +131,7 @@ export default function Movies({
         <>
           <Select
             mt="md"
+            style={{ width: "138px" }}
             comboboxProps={{ withinPortal: true }}
             data={getRateRange}
             placeholder="From"
@@ -150,6 +153,7 @@ export default function Movies({
         <>
           <Select
             mt="md"
+            style={{ width: "138px" }}
             comboboxProps={{ withinPortal: true }}
             data={getRateRange}
             placeholder="To"
@@ -259,4 +263,8 @@ export default function Movies({
       </Flex>
     </div>
   );
+}
+
+function placeholderSelect(value: string | undefined) {
+  return value == undefined ? "Select Genres" : ",";
 }
