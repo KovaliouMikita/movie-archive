@@ -1,0 +1,28 @@
+.root {
+  position: relative;
+}
+
+.input {
+  min-height: 42px;
+
+  border-radius: 8px;
+  font-size: 14px;
+}
+.input:hover {
+  background-color: #f2ebf9;
+}
+
+.option:active {
+  font-size: 14px;
+  color: white;
+  background-color: #9854f6;
+}
+
+.label {
+  /* position: absolute; */
+  pointer-events: none;
+  font-size: 16px;
+  padding-left: var(--mantine-spacing-sm);
+  padding-top: calc(var(--mantine-spacing-sm) / 2);
+  z-index: 1;
+}

@@ -1,40 +1,45 @@
 import { useState } from "react";
 import Button from "./Button";
 
-interface SideBarProps {
-  Change: (arg0: string) => void;
-}
-export default function SideBar({ Change }: SideBarProps) {
-  const [active, SetActive] = useState("0");
+import SiteLogo from "./Svg/SiteLogo";
+import { SideBarP } from "./Interfaces";
+
+export default function SideBar({ Change }: SideBarP) {
+  const [active, SetActive] = useState("1");
 
   function handleClick(type: string) {
     SetActive(type);
   }
 
   return (
-    <div className="SideBar">
-      <div className="SideBar_s">
-        <Button
-          isActive={active === "1"}
-          onClick={() => {
-            handleClick("1");
-            Change("Movie");
-          }}
-        >
-          Movie
-        </Button>
+    <>
+      <div className="SideBar">
+        <div className="SiteLogo">
+          <SiteLogo />
+          ArrowFlicks
+        </div>
+        <div className="SideBar_s">
+          <Button
+            isActive={active === "1"}
+            onClick={() => {
+              handleClick("1");
+              Change("Movies");
+            }}
+          >
+            Movies
+          </Button>
 
-        <br></br>
-        <Button
-          isActive={active === "2"}
-          onClick={() => {
-            handleClick("2");
-            Change("Rate");
-          }}
-        >
-          Rated Movie
-        </Button>
+          <Button
+            isActive={active === "2"}
+            onClick={() => {
+              handleClick("2");
+              Change("Rate");
+            }}
+          >
+            Rated movies
+          </Button>
+        </div>
       </div>
-    </div>
+    </>
   );
 }

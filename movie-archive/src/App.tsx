@@ -1,54 +1,89 @@
+import "@mantine/core/styles.css";
 import "./App.css";
-import Rate from "./Component/Rate";
-import Movie from "./Component/Movies";
-import SideBar from "./Component/SideBar";
-import { Url } from "./assets/key";
 
+import { Api_k, Url, UrlGenres } from "./assets/key";
 import { useEffect, useState } from "react";
+import { useCallback } from "react";
+import { Genre, Movie } from "./Component/Interfaces";
+//import { Group, Loader } from "@mantine/core";
+
+import Rate from "./Component/Rate";
+import SideBar from "./Component/SideBar";
 import BigMovieCard from "./Component/BigMovieCard";
+import Movies from "./Component/Movies";
+// import Component
 
-export interface dataProp {
-  poster_path?: string;
-  title: string;
-  id: number;
-  release_date: string;
-  vote_average: number;
-  vote_count: number;
-  genre_ids: number[];
-}
-function App() {
-  const [section, setSection] = useState("Movie");
-  const [dataMovies, setDataMovies] = useState<dataProp[]>([]);
-  const [page, setPage] = useState("1");
-  // const [id, setId] = useState<number>();
+export default function App() {
+  const [section, setSection] = useState("Movies");
+  const [movies, setMovies] = useState<Movie[]>([]);
+  const [page, setPage] = useState(1);
+  const [idMovie, setIdMovie] = useState(0);
+  const [sortMovies, setSortMovies] = useState("popularity.desc");
+  const [sortByReleaseDate, setSortByReleaseDate] = useState("");
+  const [sortByGenres, setSortByGenres] = useState("");
+  const [sortByRatingFrom, setSortByRatingFrom] = useState("");
+  const [sortByRatingTo, setSortByRatingTo] = useState("");
+  const [genres, setGenres] = useState<Genre[]>([]);
 
-  function dataFetch(page: string) {
-    fetch(Url + `&page=${page}`)
+  function dataFetch(
+    page: number,
+    sortMovies: string,
+    sortByReleaseDate: string,
+    sortByRatingFrom: string,
+    sortByRatingTo: string,
+    sortByGenres: string
+  ) {
+    fetch(`${Url}discover/movie${Api_k}&page=${page}&sort_by=${sortMovies}${sortByReleaseDate}${sortByRatingFrom}${sortByRatingTo}${sortByGenres}`)
       .then((res) => res.json())
-      .then((data) => setDataMovies(data.results));
+      .then((data) => {
+        setMovies(data.results);
+      });
   }
-  useEffect(() => {
-    dataFetch(page);
-  }, [page]);
 
+  async function genresFetch() {
+    const response = await fetch(UrlGenres);
+    const data = await response.json();
+    return data.genres;
+  }
+
+  const getAllFetch = useCallback(
+    (page: number, sortMovies: string, sortByReleaseDate: string, sortByRatingFrom: string, sortByRatingTo: string, sortByGenres: string) => {
+      dataFetch(page, sortMovies, sortByReleaseDate, sortByRatingFrom, sortByRatingTo, sortByGenres);
+      genresFetch().then((res) => setGenres(res));
+    },
+    []
+  );
+  useEffect(() => {
+    getAllFetch(page, sortMovies, sortByReleaseDate, sortByRatingFrom, sortByRatingTo, sortByGenres);
+  }, [page, sortMovies, sortByReleaseDate, sortByRatingFrom, sortByRatingTo, sortByGenres, getAllFetch]);
   return (
     <div className="App">
       <SideBar Change={(current: string) => setSection(current)}></SideBar>
-      {section === "Movie" && (
+      {/* {dataMovies === [] && <Error404 />} */}
+      {section === "Movies" && (
         <>
-          <Movie
-            get={dataFetch}
-            setPage={setPage}
+          <Movies
             page={page}
+            setPage={setPage}
             setSection={setSection}
-            dataMovies={dataMovies}
-          ></Movie>
+            setSortMovies={setSortMovies}
+            setSortByRatingFrom={setSortByRatingFrom}
+            setSortByRatingTo={setSortByRatingTo}
+            setSortByReleaseDate={setSortByReleaseDate}
+            setSortByGenres={setSortByGenres}
+            movies={movies}
+            genres={genres}
+            setIdMovie={setIdMovie}
+          ></Movies>
         </>
       )}
       {section === "Rate" && <Rate></Rate>}
-      {section === "BigMovieCard" && <BigMovieCard />}
+      {section === "BigMovieCard" && <BigMovieCard idMovie={idMovie} setSection={setSection} />}
+      {/* <div className="LoaderWait">
+        <Group justify="center" align="center">
+          <Loader size={70} />{" "}
+        </Group>
+      </div> */}
     </div>
   );
 }
-
-export default App;
