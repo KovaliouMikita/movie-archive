@@ -19,8 +19,8 @@ export default function EmptySearch() {
           />
           <path d="M206.734 189.157L197.362 198.529L219.491 220.659L228.864 211.286L206.734 189.157Z" fill="#541F9D" />
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M183.889 196.772L205.27 175.391L214.935 185.056C216.488 186.609 217.361 188.716 217.361 190.914C217.361 193.111 216.488 195.218 214.935 196.772L205.27 206.437C203.716 207.99 201.609 208.863 199.412 208.863C197.215 208.863 195.107 207.99 193.554 206.437L183.889 196.772Z"
             fill="#BD93F7"
           />
@@ -41,12 +41,12 @@ export default function EmptySearch() {
           {/* </mask> */}
           <g mask="url(#mask1_18128_818)">
             <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
+              fillRule="evenodd"
+              clipRule="evenodd"
               d="M231.173 73.0346C231.637 77.3958 230.534 81.7798 228.062 85.4026L189.839 141.43L199.934 162.13C187.221 185.093 162.746 200.641 134.64 200.641C132.442 200.641 130.245 200.545 128.055 200.354L123.824 190.828L122.424 199.645C108.104 197.285 95.1599 190.847 84.8229 181.563L87.1379 157.725C87.418 154.835 88.4087 152.06 90.0216 149.646C91.6345 147.232 93.8195 145.255 96.3819 143.891L136.296 122.632L162.803 99.5186L187.264 78.3096L128.36 79.6406L127.587 65.9376L152.198 62.8456L210.843 56.6116C220.992 55.5316 230.094 62.8856 231.173 73.0346Z"
               fill="white"
             />
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M127.636 129.099L119.208 109.249L137.331 101.559L145.758 121.408" fill="white" />
+            <path fillRule="evenodd" clipRule="evenodd" d="M127.636 129.099L119.208 109.249L137.331 101.559L145.758 121.408" fill="white" />
             <path
               d="M127.636 129.099L119.208 109.249L137.331 101.559L145.758 121.408"
               stroke="black"
@@ -71,8 +71,8 @@ export default function EmptySearch() {
               fill="black"
             />
             <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
+              fillRule="evenodd"
+              clipRule="evenodd"
               d="M136.588 84.3277L138.313 83.2607C138.788 82.9671 139.324 82.7865 139.88 82.7328C140.436 82.679 140.997 82.7536 141.52 82.9508C142.042 83.1479 142.513 83.4624 142.895 83.87C143.277 84.2776 143.56 84.7674 143.723 85.3017L143.772 85.4607C144.194 86.8415 144.189 88.3175 143.757 89.6952C143.326 91.073 142.488 92.2883 141.354 93.1817L140.6 93.7767L136.588 84.3277Z"
               fill="white"
               stroke="black"
@@ -88,8 +88,8 @@ export default function EmptySearch() {
               strokeLinejoin="round"
             />
             <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
+              fillRule="evenodd"
+              clipRule="evenodd"
               d="M107.57 96.6445L105.605 97.1445C105.063 97.282 104.561 97.5419 104.136 97.9043C103.711 98.2667 103.375 98.7219 103.153 99.2348C102.932 99.7476 102.831 100.304 102.859 100.862C102.887 101.42 103.043 101.964 103.314 102.453L103.395 102.599C104.095 103.861 105.161 104.883 106.452 105.53C107.743 106.177 109.199 106.419 110.63 106.224L111.582 106.095L107.57 96.6445Z"
               fill="white"
               stroke="black"
@@ -105,8 +105,8 @@ export default function EmptySearch() {
               strokeLinejoin="round"
             />
             <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
+              fillRule="evenodd"
+              clipRule="evenodd"
               d="M134.678 79.8417L139.121 90.3057C142.523 98.3187 138.787 107.572 130.777 110.971C122.766 114.371 113.514 110.63 110.112 102.617L105.669 92.1527C102.267 84.1387 106.002 74.8867 114.013 71.4867C122.024 68.0877 131.276 71.8277 134.678 79.8417Z"
               fill="white"
               stroke="black"
@@ -144,8 +144,8 @@ export default function EmptySearch() {
               fill="black"
             />
             <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
+              fillRule="evenodd"
+              clipRule="evenodd"
               d="M118.389 60.5295C120.957 60.3075 122.464 61.5995 122.91 64.4025C126.001 63.6365 128.897 63.5105 131.598 64.0265C137.639 65.1805 139.904 71.7145 136.857 77.5295C137.12 78.9645 137.414 80.7125 137.74 82.7725C136.892 83.6675 136.292 84.0535 135.942 83.9305C134.818 83.5311 133.754 82.9815 132.778 82.2965C130.056 84.4075 126.252 86.0485 121.243 86.7255C113.99 87.7065 109.268 86.7705 107.078 83.9205C107.587 88.4745 107.449 92.4015 106.664 95.7005C100.434 92.1805 97.1349 88.2345 96.7679 83.8625C96.4439 80.0055 98.0129 77.8275 101.473 77.3265C102.402 71.8045 111.295 61.1415 118.389 60.5295Z"
               fill="black"
             />
@@ -159,8 +159,8 @@ export default function EmptySearch() {
             <path d="M124.996 197.951L121.225 190.295" stroke="black" strokeWidth="1.32" strokeLinecap="round" strokeLinejoin="round" />
             <path d="M117.817 138.214L145.283 141.632L155.212 116.38" stroke="black" strokeWidth="1.32" strokeLinejoin="round" />
             <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
+              fillRule="evenodd"
+              clipRule="evenodd"
               d="M147.137 48.1496L149.368 93.6776L166.061 91.9496L151.611 108.878L211.642 236.338L230.741 200.171L196.575 138.86L231.731 84.3546C239.633 72.1046 236.109 55.7626 223.862 47.8526C219.04 44.7376 213.335 43.2799 207.61 43.7006L147.137 48.1496Z"
               fill="#EAEBED"
               stroke="black"
@@ -169,8 +169,8 @@ export default function EmptySearch() {
             />
             <path d="M165.136 93.1025L174.78 80.9045" stroke="black" strokeWidth="1.32" strokeLinecap="round" strokeLinejoin="round" />
             <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
+              fillRule="evenodd"
+              clipRule="evenodd"
               d="M162.93 96.0107L168.417 128.479L176.437 126.883C177.388 126.694 178.367 126.703 179.315 126.91C180.262 127.118 181.156 127.518 181.941 128.087C182.726 128.656 183.385 129.381 183.877 130.217C184.369 131.052 184.682 131.98 184.799 132.943L191.755 190.295"
               fill="#EAEBED"
             />
@@ -181,8 +181,8 @@ export default function EmptySearch() {
               strokeLinejoin="round"
             />
             <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
+              fillRule="evenodd"
+              clipRule="evenodd"
               d="M116.564 132.88L170.176 254.976L150.281 264.112L123.109 208.549L119.211 225.646L81.3029 212.289L87.0229 157.999C87.3368 155.016 88.3725 152.154 90.0407 149.661C91.7088 147.168 93.959 145.119 96.5968 143.691L116.564 132.88Z"
               fill="#EAEBED"
               stroke="black"
@@ -191,8 +191,8 @@ export default function EmptySearch() {
             />
             <path d="M197.455 140.424L193.644 133.761" stroke="black" strokeWidth="1.32" strokeLinecap="round" strokeLinejoin="round" />
             <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
+              fillRule="evenodd"
+              clipRule="evenodd"
               d="M103.335 139.497L122.873 162.106L117.965 173.67C117.503 174.759 117.342 175.953 117.499 177.126C117.656 178.299 118.126 179.408 118.859 180.338L157.416 229.23"
               fill="#EAEBED"
             />
@@ -204,8 +204,8 @@ export default function EmptySearch() {
             />
           </g>
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M143.535 79.2215L95.9798 83.0916C94.3387 83.2246 92.7088 82.7256 91.4235 81.6965C90.1383 80.6674 89.2948 79.186 89.0658 77.5555C88.9548 76.7676 89.0002 75.9655 89.1992 75.1951C89.3983 74.4247 89.7472 73.701 90.226 73.0654C90.7048 72.4299 91.3041 71.8949 91.9897 71.491C92.6753 71.0871 93.4338 70.8222 94.2218 70.7115L94.2488 70.7076L146.069 63.6646"
             fill="white"
           />
@@ -217,8 +217,8 @@ export default function EmptySearch() {
             strokeLinejoin="round"
           />
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M143.536 79.2205L110.206 81.2225C108.551 81.3216 106.92 80.7938 105.637 79.7441C104.354 78.6945 103.514 77.2 103.283 75.5585C103.172 74.7718 103.218 73.9709 103.416 73.2017C103.615 72.4325 103.963 71.7099 104.442 71.0753C104.92 70.4407 105.518 69.9065 106.202 69.5032C106.887 69.0998 107.644 68.8352 108.431 68.7245L108.467 68.7195L146.069 63.6655"
             fill="white"
           />

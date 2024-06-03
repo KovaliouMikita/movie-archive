@@ -4,12 +4,22 @@
 
 .input {
   min-height: 42px;
-
   border-radius: 8px;
+  display: flex;
+  font-size: 14px;
+}
+.inputList {
   font-size: 14px;
 }
 .input:hover {
   background-color: #f2ebf9;
+}
+
+.pill {
+  background-color: ;
+}
+.pillList {
+  font-size: 14px;
 }
 
 .option:active {

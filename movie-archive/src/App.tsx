@@ -16,7 +16,7 @@ import Movies from "./Component/Movies";
 export default function App() {
   const [section, setSection] = useState("Movies");
   const [movies, setMovies] = useState<Movie[]>([]);
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState<number>(1);
   const [idMovie, setIdMovie] = useState(0);
   const [sortMovies, setSortMovies] = useState("popularity.desc");
   const [sortByReleaseDate, setSortByReleaseDate] = useState("");
@@ -87,3 +87,29 @@ export default function App() {
     </div>
   );
 }
+
+// interface FetchQueryParameters {
+//   page: number | null;
+//   getPage: () => void;
+//   sortMovies: string;
+//   getSortMovies: () => void;
+//   sortByReleaseDate: string;
+//   sortByRatingFrom: string;
+//   sortByRatingTo: string;
+//   sortByGenres: string[];
+// }
+// const fetchQueryParameters: FetchQueryParameters = {
+//   page: 1,
+//   getPage: function () {
+//     return this.page !== null ? `&page=${this.page}` : "";
+//   },
+//   sortMovies: " string",
+//   getSortMovies: function () {
+//     return this.sortMovies !== null ? `&sort_by=${this.sortMovies}` : "";
+//   },
+//   sortByReleaseDate: "string",
+//   sortByRatingFrom: " string",
+//   sortByRatingTo: "string",
+//   sortByGenres: [],
+// };
+// console.log(fetchQueryParameters);

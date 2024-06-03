@@ -4,6 +4,7 @@ import classes from "./Css/ContainedInput.module.css";
 import { Button } from "@mantine/core";
 import { useCallback, useMemo, useState } from "react";
 import { Movie, Genre } from "./Interfaces";
+import EmptySearch from "./Svg/EmptySearch";
 
 export interface Props {
   page: number;
@@ -99,7 +100,7 @@ export default function Movies({
             value={selectedGenreId}
             data={genreOptions}
             maxDropdownHeight="188px"
-            placeholder={placeholderSelect(selectedGenreId?.toString())}
+            placeholder={"Select genres"}
             label="Genres"
             classNames={classes}
             clearable
@@ -178,7 +179,7 @@ export default function Movies({
           color="rgba(0, 0, 0, 1)"
           onClick={() => {
             setSortMovies("popularity.desc");
-            setSelectedGenreId(undefined);
+            setSelectedGenreId([]);
             setSortByReleaseDate("");
             setSelectedYearId(null);
             setSortByRatingFrom("");
@@ -212,59 +213,63 @@ export default function Movies({
           classNames={classes}
         />
       </div>
+
+      {movies.length == 0 && (
+        <div className="Flex-center">
+          <EmptySearch></EmptySearch>
+        </div>
+      )}
       <div className="CardSection">
         {movies.map((movie: Movie) => (
           <MovieCard setSection={(current: string) => setSection(current)} movie={movie} genres={genres} setIdMovie={setIdMovie} key={movie.id} />
         ))}
       </div>
-      <Flex mih={50} bg="rgba(234, 235, 237, 1)" gap="xs" justify="flex-end" align="flex-start" direction="row" wrap="wrap">
-        <Button.Group>
-          <Button
-            variant="default"
-            onClick={() => {
-              setPage(page - 1);
-            }}
-          >
-            {"<"}
-          </Button>
-          <Button
-            variant="default"
-            onClick={() => {
-              setPage(page - 1);
-            }}
-          >
-            {page}
-          </Button>
-          <Button
-            variant="default"
-            onClick={() => {
-              setPage(page + 1);
-            }}
-          >
-            {page + 1}
-          </Button>
-          <Button
-            variant="default"
-            onClick={() => {
-              setPage(page + 2);
-            }}
-          >
-            {page + 2}
-          </Button>
-          <Button
-            variant="default"
-            onClick={() => {
-              setPage(page + 1);
-            }}
-          >
-            {">"}
-          </Button>
-        </Button.Group>
-      </Flex>
+      {movies.length !== 0 && (
+        <Flex mih={50} bg="rgba(234, 235, 237, 1)" gap="xs" justify="flex-end" align="flex-start" direction="row" wrap="wrap">
+          <Button.Group>
+            <Button
+              variant="default"
+              onClick={() => {
+                setPage(page - 1);
+              }}
+            >
+              {"<"}
+            </Button>
+            <Button
+              variant="default"
+              onClick={() => {
+                setPage(page - 1);
+              }}
+            >
+              {page}
+            </Button>
+            <Button
+              variant="default"
+              onClick={() => {
+                setPage(page + 1);
+              }}
+            >
+              {page + 1}
+            </Button>
+            <Button
+              variant="default"
+              onClick={() => {
+                setPage(page + 2);
+              }}
+            >
+              {page + 2}
+            </Button>
+            <Button
+              variant="default"
+              onClick={() => {
+                setPage(page + 1);
+              }}
+            >
+              {">"}
+            </Button>
+          </Button.Group>
+        </Flex>
+      )}
     </div>
   );
-}
-
-function placeholderSelect(value: string | undefined) {
-  return value == undefined ? "Select Genres" : ",";
 }

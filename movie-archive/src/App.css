@@ -164,6 +164,12 @@ a:hover {
   justify-content: start;
 }
 .ProductionBlock_Companies img {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+}
+.ProductionBlock_Companies svg {
+  border-radius: 50%;
   height: 40px;
   width: 40px;
 }
@@ -318,4 +324,9 @@ hr {
 .flex-end {
   display: flex;
   justify-content: flex-end;
+}
+
+.Flex-center {
+  display: flex;
+  justify-content: center;
 }
