@@ -1,51 +1,42 @@
 import "@mantine/core/styles.css";
 import "./App.css";
-import Rate from "./Component/Rate";
-import Movie from "./Component/Movies";
-import SideBar from "./Component/SideBar";
-import { Url, UrlGenres } from "./assets/key";
+
+import { Api_k, Url, UrlGenres } from "./assets/key";
 import { useEffect, useState } from "react";
 import { useCallback } from "react";
-import BigMovieCard from "./Component/BigMovieCard";
-// import { Loader } from "@mantine/core";
+import { Genre, Movie } from "./Component/Interfaces";
+//import { Group, Loader } from "@mantine/core";
 
-export interface productionCompaniesProps {
-  logo_path?: string;
-  name?: string;
-}
-export interface genresProps {
-  name?: string;
-  id?: number;
-}
-export interface dataProp {
-  poster_path?: string;
-  title: string;
-  id: number;
-  release_date: string;
-  vote_average: number;
-  vote_count: number;
-  genre_ids: number[];
-  runtime?: number;
-  budget?: number;
-  revenue?: number;
-  genres?: genresProps[];
-  overview: string;
-  production_companies: productionCompaniesProps[];
-}
+import Rate from "./Component/Rate";
+import SideBar from "./Component/SideBar";
+import BigMovieCard from "./Component/BigMovieCard";
+import Movies from "./Component/Movies";
+// import Component
 
 export default function App() {
   const [section, setSection] = useState("Movies");
-  const [dataMovies, setDataMovies] = useState<dataProp[]>([]);
-  const [page, setPage] = useState("1");
+  const [movies, setMovies] = useState<Movie[]>([]);
+  const [page, setPage] = useState<number>(1);
   const [idMovie, setIdMovie] = useState(0);
-  const [genres, setGenres] = useState<object[]>([]);
+  const [sortMovies, setSortMovies] = useState("popularity.desc");
+  const [sortByReleaseDate, setSortByReleaseDate] = useState("");
+  const [sortByGenres, setSortByGenres] = useState("");
+  const [sortByRatingFrom, setSortByRatingFrom] = useState("");
+  const [sortByRatingTo, setSortByRatingTo] = useState("");
+  const [genres, setGenres] = useState<Genre[]>([]);
 
-  function dataFetch(page: string) {
-    fetch(Url + `&page=${page}`)
+  function dataFetch(
+    page: number,
+    sortMovies: string,
+    sortByReleaseDate: string,
+    sortByRatingFrom: string,
+    sortByRatingTo: string,
+    sortByGenres: string
+  ) {
+    fetch(`${Url}discover/movie${Api_k}&page=${page}&sort_by=${sortMovies}${sortByReleaseDate}${sortByRatingFrom}${sortByRatingTo}${sortByGenres}`)
       .then((res) => res.json())
       .then((data) => {
-        setDataMovies(data.results);
-        console.log(data);
+        setMovies(data.results);
       });
   }
 
@@ -55,40 +46,75 @@ export default function App() {
     return data.genres;
   }
 
-  const getAllFentch = useCallback(
-    (page: any) => {
-      dataFetch(page);
+  const getAllFetch = useCallback(
+    (page: number, sortMovies: string, sortByReleaseDate: string, sortByRatingFrom: string, sortByRatingTo: string, sortByGenres: string) => {
+      dataFetch(page, sortMovies, sortByReleaseDate, sortByRatingFrom, sortByRatingTo, sortByGenres);
       genresFetch().then((res) => setGenres(res));
     },
-    [genres, dataMovies]
+    []
   );
   useEffect(() => {
-    //dataFetch(page);
-    //fetchGenres().then((res) => setGenres(res));
-    getAllFentch(page);
-  }, [page]);
-  console.log(dataMovies);
+    getAllFetch(page, sortMovies, sortByReleaseDate, sortByRatingFrom, sortByRatingTo, sortByGenres);
+  }, [page, sortMovies, sortByReleaseDate, sortByRatingFrom, sortByRatingTo, sortByGenres, getAllFetch]);
   return (
     <div className="App">
       <SideBar Change={(current: string) => setSection(current)}></SideBar>
+      {/* {dataMovies === [] && <Error404 />} */}
       {section === "Movies" && (
         <>
-          <Movie
-            get={dataFetch}
-            setPage={setPage}
+          <Movies
             page={page}
+            setPage={setPage}
             setSection={setSection}
-            dataMovies={dataMovies}
+            setSortMovies={setSortMovies}
+            setSortByRatingFrom={setSortByRatingFrom}
+            setSortByRatingTo={setSortByRatingTo}
+            setSortByReleaseDate={setSortByReleaseDate}
+            setSortByGenres={setSortByGenres}
+            movies={movies}
             genres={genres}
             setIdMovie={setIdMovie}
-          ></Movie>
+          ></Movies>
         </>
       )}
       {section === "Rate" && <Rate></Rate>}
-      {section === "BigMovieCard" && (
-        <BigMovieCard idMovie={idMovie} setSection={setSection} />
-      )}
-      <div className="LoaderWait">{/* <Loader size={70} /> */}</div>
+      {section === "BigMovieCard" && <BigMovieCard idMovie={idMovie} setSection={setSection} />}
+      {/* <div className="LoaderWait">
+        <Group justify="center" align="center">
+          <Loader size={70} />{" "}
+        </Group>
+      </div> */}
     </div>
   );
 }
+
+interface FetchQueryParameters {
+  page: number | null;
+  getPage: () => void;
+  sortMovies: string;
+  getSortMovies: () => void;
+  sortByReleaseDate: string;
+  getSortByReleaseDate: () => void;
+  sortByRatingFrom: string;
+  sortByRatingTo: string;
+  sortByGenres: string[];
+}
+const fetchQueryParameters: FetchQueryParameters = {
+  page: 1,
+  getPage: function () {
+    return this.page !== null ? `&page=${this.page}` : "";
+  },
+  sortMovies: " string",
+  getSortMovies: function () {
+    return this.sortMovies !== null ? `&sort_by=${this.sortMovies}` : "";
+  },
+  sortByReleaseDate: "string",
+  getSortByReleaseDate: function () {
+    return this.sortByReleaseDate !== null ? `&sort_by=${this.sortByReleaseDate}` : "";
+  },
+  sortByRatingFrom: " string",
+  sortByRatingTo: "string",
+  sortByGenres: [],
+};
+
+console.log(fetchQueryParameters);

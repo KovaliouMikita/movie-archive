@@ -3,10 +3,29 @@
 }
 
 .input {
-  height: 42px;
-  padding-top: rem(18px);
+  min-height: 42px;
   border-radius: 8px;
+  display: flex;
   font-size: 14px;
+}
+.inputList {
+  font-size: 14px;
+}
+.input:hover {
+  background-color: #f2ebf9;
+}
+
+.pill {
+  background-color: ;
+}
+.pillList {
+  font-size: 14px;
+}
+
+.option:active {
+  font-size: 14px;
+  color: white;
+  background-color: #9854f6;
 }
 
 .label {
@@ -16,8 +35,4 @@
   padding-left: var(--mantine-spacing-sm);
   padding-top: calc(var(--mantine-spacing-sm) / 2);
   z-index: 1;
-}
-
-.label:hover {
-  background-color: magenta;
 }
