@@ -1,45 +1,41 @@
-import { dataProp } from "../App";
 import { IconStar } from "@tabler/icons-react";
 import { ActionIcon, rem } from "@mantine/core";
+import { Genre, MovieCardP } from "./Interfaces";
+import NoPoster from "./Svg/NoPoster";
 
-interface MovieCardProps {
-  dataMovie: dataProp;
-  setSection: (_arg0: string) => void;
-  setIdMovie: Function;
-  genres: object[];
-}
-
-export default function MovieCard({
-  dataMovie,
-  setSection,
-  genres,
-  setIdMovie,
-}: MovieCardProps) {
+export default function MovieCard({ movie, setSection, genres, setIdMovie }: MovieCardP) {
   return (
     <>
       <div className="MovieCard">
-        <img
+        <div
+          className="MovieCardImg"
           onClick={() => {
             setSection("BigMovieCard");
-            setIdMovie(dataMovie.id);
+            setIdMovie(movie?.id);
           }}
-          src={`https://image.tmdb.org/t/p/w500${dataMovie.poster_path}`}
-          alt="not IMG"
-        />
-        <div className="CardRow">
-          <p className="TitleName">{dataMovie.title}</p>
+        >
+          {movie?.poster_path !== null && <img src={`https://image.tmdb.org/t/p/w500${movie?.poster_path}`}></img>}
+          {movie?.poster_path == null && (
+            <>
+              <NoPoster />
+              No poster
+            </>
+          )}
+        </div>
 
-          <p className="Grey16">{dataMovie.release_date.slice(0, 4)}</p>
+        <div className="CardRow">
+          <p className="TitleName">{movie.title}</p>
+
+          <p className="Grey16">{movie.release_date?.slice(0, 4)}</p>
           <div className="RateBlock">
             <IconStar size={18} />
-            <p>{dataMovie.vote_average}</p>{" "}
-            <p className="Grey16">({dataMovie.vote_count})</p>
+            <p>{movie.vote_average}</p> <p className="Grey16">({movie.vote_count})</p>
           </div>
           <div className="MovieCard_Genres">
             <p className="Grey16">Genres</p>
-            {dataMovie?.genre_ids.map((i: number) => (
+            {movie?.genre_ids.map((i: number) => (
               <p key={i}>
-                {genres.map((el: any) => {
+                {genres.map((el: Genre) => {
                   return el.id === i ? el.name : "";
                 })}
               </p>
